@@ -20,7 +20,7 @@ import prueba  # noqa: E402  (reads HOJA_MODEL at import)
 from fuentes import titulares  # noqa: E402
 from mejorada import calavera, rhyme_sounds  # noqa: E402
 from prueba import ollama_chat  # noqa: E402
-from traduccion import hoja as formato, traducir  # noqa: E402
+from traduccion import hoja as formato, traducir, traducir_titular  # noqa: E402
 
 CATEGORIAS = [
     "móviles y hardware",
@@ -158,7 +158,7 @@ def main() -> None:
         versos = r["best"]["versos"]
         usadas.update(rhyme_sounds(versos, r["best"]["res"]))  # each calavera must find fresh rhyme sounds
         english = traducir(versos) if r["best"]["res"].get("ok") else []
-        hoja.append({**e, "versos": versos, "english": english, "check": r["best"]["res"], "segundos": r["seconds"]})
+        hoja.append({**e, "titular_en": traducir_titular(e["titular"]), "versos": versos, "english": english, "check": r["best"]["res"], "segundos": r["seconds"]})
         mark = "✅" if r["best"]["res"].get("ok") else "❌"
         print(f"\n{mark} {e['titular']}  [{e['fuente']}]")
         print(formato(versos, english))

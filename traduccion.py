@@ -5,6 +5,7 @@ English is a plain, line-aligned translation so non-Spanish readers get the joke
 
 Usage (adds translations to an existing results file and prints the sheet):
   python3 traduccion.py resultados_mejorada_gemma3_12b.json
+  python3 traduccion.py --titulares hoja_2026-10-31.json   # English headlines for a sheet
 """
 
 import json
@@ -41,6 +42,27 @@ def traducir(versos: list[str]) -> list[str]:
     return []  # better no gloss than a misaligned one
 
 
+SCHEMA_TITULAR = {
+    "type": "object",
+    "properties": {"en": {"type": "string"}},
+    "required": ["en"],
+}
+
+
+def traducir_titular(titular: str) -> str:
+    """English version of a news headline, for readers who don't speak Spanish."""
+    messages = [
+        {"role": "system", "content": "Translate this Spanish news headline into natural English. "
+                                      "Keep product and company names as they are. Reply with the headline only."},
+        {"role": "user", "content": titular},
+    ]
+    try:
+        en = ollama_chat(messages, SCHEMA_TITULAR, max_tokens=120, temperature=0.2).get("en", "")
+    except (json.JSONDecodeError, KeyError, urllib.error.URLError):
+        return ""
+    return en.strip()
+
+
 def hoja(versos: list[str], lines: list[str]) -> str:
     width = max((len(v) for v in versos), default=0) + 4
     if not lines:
@@ -48,7 +70,21 @@ def hoja(versos: list[str], lines: list[str]) -> str:
     return "\n".join(f"{v:<{width}}{e}" for v, e in zip(versos, lines))
 
 
+def titulares_hoja(path: str) -> None:
+    """Fill in English headlines for a sheet generated before hoja.py did it."""
+    with open(path) as f:
+        data = json.load(f)
+    for c in data["calaveras"]:
+        if not c.get("titular_en"):
+            c["titular_en"] = traducir_titular(c["titular"])
+        print(f"{c['titular'][:60]}\n  → {c['titular_en']}")
+    with open(path, "w") as f:
+        json.dump(data, f, ensure_ascii=False, indent=2)
+
+
 def main() -> None:
+    if sys.argv[1] == "--titulares":
+        return titulares_hoja(sys.argv[2])
     path = sys.argv[1]
     with open(path) as f:
         runs = json.load(f)

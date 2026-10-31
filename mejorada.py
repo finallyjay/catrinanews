@@ -3,8 +3,8 @@
 Builds on prueba.py's baseline ("libre"):
   1. Retry feedback covers meter too ("line 3 has 11 syllables, make it 8"),
      not only the 2-4 rhyme.
-  2. "panteón" is banned as a line ending: the 4B model leaned on it in 10 of
-     its 20 baseline rhymes.
+  2. "panteón" is banned as a line ending: the 4B model ended a line with it in
+     4 of its 10 baseline calaveras.
   3. Best-of-k: k independent candidates per headline, each with up to
      MAX_TRIES rounds of feedback, and code picks the best one by score.
   4. Optional `evitar`: rhyme sounds already used elsewhere in the sheet are

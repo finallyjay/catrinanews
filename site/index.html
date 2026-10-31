@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Catrina News · 31 de octubre de 2026</title>
+<meta name="description" content="Calaveras literarias de las noticias tecnológicas del día, escritas por un modelo abierto en local y recitadas por la Catrina.">
+<meta property="og:title" content="Catrina News · 31 de octubre de 2026">
+<meta property="og:description" content="Today's tech news as Day of the Dead calaveras: written by a local open model, rhyme checked in code, read aloud by the Catrina.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Rye&display=swap" rel="stylesheet">
+<style>
+:root { --paper:#efe6cf; --ink:#1b1611; --red:#c8102e; --muted:#5b5146; }
+* { box-sizing:border-box; }
+body { margin:0; background:#2a241d; color:var(--ink);
+  font-family:"IM Fell English", Georgia, "Times New Roman", serif; }
+.hoja { max-width:880px; margin:32px auto; padding:36px 44px 28px;
+  background: radial-gradient(circle at 20% 10%, #f6efdc 0, transparent 45%),
+              radial-gradient(circle at 85% 90%, #e2d5b5 0, transparent 50%), var(--paper);
+  border:3px double var(--ink); outline:10px solid var(--paper); box-shadow:0 0 0 13px var(--ink), 0 20px 60px #0008; }
+.top { display:flex; justify-content:space-between; font-size:.85rem; letter-spacing:.08em;
+  text-transform:uppercase; border-bottom:1px solid var(--ink); padding-bottom:6px; }
+header { text-align:center; padding:18px 0 10px; border-bottom:4px double var(--ink); }
+.skull { width:84px; height:auto; display:block; margin:0 auto 6px; }
+h1 { font-family:"Rye", "IM Fell English", serif; font-weight:400; font-size:clamp(2rem, 6vw, 3.4rem);
+  line-height:1.05; margin:0; letter-spacing:.02em; }
+h1 em { color:var(--red); font-style:normal; }
+.lema { font-family:"Rye", "IM Fell English", serif; font-size:1.3rem; margin:6px 0 0; letter-spacing:.04em; }
+.sub { font-style:italic; margin:8px auto 0; max-width:36em; }
+.grid { display:grid; grid-template-columns:1fr 1fr; gap:0; }
+article { padding:22px 20px 18px; border-bottom:1px solid var(--ink); }
+article:nth-child(odd) { border-right:1px solid var(--ink); }
+article:last-child:nth-child(odd) { grid-column:1 / -1; border-right:none; text-align:center; }
+.kicker { font-size:.8rem; text-transform:uppercase; letter-spacing:.06em; color:var(--muted); margin:0 0 4px; }
+.titular { font-weight:700; font-size:.98rem; margin:0 0 12px; }
+.titular a { color:inherit; text-decoration:none; border-bottom:1px dotted var(--muted); }
+.versos { font-size:1.25rem; line-height:1.45; margin:0 0 10px; }
+.versos span { display:block; }
+.versos span:nth-child(even) { padding-left:1.4em; }
+.en { font-size:.86rem; font-style:italic; color:var(--muted); margin:0 0 10px; line-height:1.4; }
+.en span { display:block; }
+audio { width:100%; height:32px; margin:0 0 8px; filter:sepia(.6); }
+.check { font-family:ui-monospace, Menlo, monospace; font-size:.7rem; color:var(--muted); }
+.check b { color:var(--red); font-weight:600; }
+html[data-lang="en"] .i18n[lang="es"], html[data-lang="es"] .i18n[lang="en"] { display:none; }
+.langs button { font:inherit; font-size:.75rem; letter-spacing:.08em; background:none; border:1px solid var(--ink);
+  color:var(--ink); padding:1px 6px; cursor:pointer; }
+html[data-lang="en"] .b-en, html[data-lang="es"] .b-es { background:var(--ink); color:var(--paper); }
+html[data-lang="en"] .en { font-size:.95rem; color:var(--ink); }
+.about { padding:18px 6px 4px; border-bottom:4px double var(--ink); }
+.about h2 { font-family:"Rye", serif; font-weight:400; font-size:1.4rem; margin:0 0 8px; text-align:center; }
+.about p { margin:0 0 10px; line-height:1.5; }
+footer { text-align:center; font-size:.85rem; padding-top:14px; font-style:italic; }
+footer strong { font-style:normal; }
+@media (max-width:700px) {
+  .hoja { margin:0; padding:22px 18px; outline:none; box-shadow:none; }
+  .grid { grid-template-columns:1fr; }
+  article:nth-child(odd) { border-right:none; }
+}
+</style>
+<script>
+  // Spanish for Spanish-speaking browsers, English otherwise; the choice is remembered.
+  (function () {
+    var saved = localStorage.getItem("lang");
+    var lang = saved || ((navigator.language || "").slice(0, 2) === "es" ? "es" : "en");
+    document.documentElement.dataset.lang = lang;
+    document.documentElement.lang = lang;
+  })();
+  function setLang(lang) {
+    document.documentElement.dataset.lang = lang;
+    document.documentElement.lang = lang;
+    localStorage.setItem("lang", lang);
+  }
+</script>
+</head>
+<body>
+<main class="hoja">
+  <div class="top">
+    <span><span class="i18n" lang="es">Hoja volante</span><span class="i18n" lang="en">Broadside</span></span>
+    <span><span class="i18n" lang="es">31 de octubre de 2026</span><span class="i18n" lang="en">October 31, 2026</span></span>
+    <span class="langs" role="group" aria-label="Language / Idioma">
+      <button type="button" onclick="setLang('en')" class="b-en">EN</button>
+      <button type="button" onclick="setLang('es')" class="b-es">ES</button>
+    </span>
+  </div>
+  <header>
+    <svg class="skull" viewBox="0 0 120 130" aria-hidden="true">
+  <path d="M60 6C30 6 10 28 10 56c0 16 7 28 18 35v14c0 5 4 9 9 9h46c5 0 9-4 9-9V91c11-7 18-19 18-35C110 28 90 6 60 6z" fill="#1b1611"/>
+  <ellipse cx="40" cy="58" rx="13" ry="15" fill="#efe6cf"/>
+  <ellipse cx="80" cy="58" rx="13" ry="15" fill="#efe6cf"/>
+  <path d="M60 72l-8 14h16z" fill="#efe6cf"/>
+  <g stroke="#efe6cf" stroke-width="3">
+    <line x1="44" y1="100" x2="44" y2="114"/><line x1="54" y1="100" x2="54" y2="114"/>
+    <line x1="66" y1="100" x2="66" y2="114"/><line x1="76" y1="100" x2="76" y2="114"/>
+  </g>
+  <g fill="#c8102e"><circle cx="40" cy="30" r="5"/><circle cx="60" cy="24" r="6"/><circle cx="80" cy="30" r="5"/></g>
+</svg>
+    <h1>Catrina <em>News</em></h1>
+    <p class="lema">¡Gran Calavera Tecnológica!</p>
+    <p class="sub"><span class="i18n" lang="es">Donde la Flaca visita a las empresas que salieron hoy en las noticias, como hacía la prensa satírica del siglo XIX con los poderosos.</span><span class="i18n" lang="en">Where Death pays a visit to the tech companies in today's news, the way Mexico's 19th-century satirical press mocked the powerful.</span></p>
+  </header>
+  <section class="grid">
+<article>
+  <p class="kicker"><span class="i18n" lang="es">Según El País</span><span class="i18n" lang="en">From El País</span></p>
+  <p class="titular"><a href="https://elpais.com/tecnologia/2026-10-28/la-moda-de-los-dispositivos-sin-pantalla-y-por-que-cada-vez-hay-mas.html" rel="noopener"><span class="i18n" lang="es">La moda de los dispositivos sin pantalla y por qué cada vez hay más</span><span class="i18n" lang="en">The Trend of Screenless Devices and Why It&#x27;s Growing</span></a></p>
+  <p class="versos" lang="es"><span>Vendía el futuro en cristal,</span><span>promesa de conexión total,</span><span>mas la Muerte, con su ritual,</span><span>lo envió a un eterno digital.</span></p>
+  <p class="en" lang="en"><span>He used to sell the future in crystal,</span><span>a promise of total connection,</span><span>but Death, with her ritual,</span><span>sent him to an eternal digital.</span></p>
+  <audio controls preload="none" src="audio/calavera-01.mp3"></audio>
+  <p class="check"><span class="i18n" lang="es">rima</span><span class="i18n" lang="en">rhyme</span> 2-4 <b>✓</b> · 1-3 <b>✓</b> · <span class="i18n" lang="es">sílabas</span><span class="i18n" lang="en">syllables</span> 9-10-9-9</p>
+</article>
+<article>
+  <p class="kicker"><span class="i18n" lang="es">Según El País</span><span class="i18n" lang="en">From El País</span></p>
+  <p class="titular"><a href="https://elpais.com/tecnologia/2026-10-26/el-iphone-duo-el-primer-plegable-de-apple-recibe-quejas-de-clientes-por-roturas-de-pantallas.html" rel="noopener"><span class="i18n" lang="es">El iPhone Duo, el primer plegable de Apple, recibe quejas de clientes por roturas de pantallas</span><span class="i18n" lang="en">Customers Report Screen Breakage on iPhone Duo, Apple&#x27;s First Foldable</span></a></p>
+  <p class="versos" lang="es"><span>El iPhone Duo, lujo voraz,</span><span>Con su precio, ¡un golpe crucial,</span><span>La pantalla, ¡qué fugaz!</span><span>Y a la cartera, ¡un descalabro final!</span></p>
+  <p class="en" lang="en"><span>The iPhone Duo, a voracious luxury,</span><span>With its price, a crucial blow,</span><span>The screen, so fleeting!</span><span>And to the wallet, a final setback!</span></p>
+  <audio controls preload="none" src="audio/calavera-02.mp3"></audio>
+  <p class="check"><span class="i18n" lang="es">rima</span><span class="i18n" lang="en">rhyme</span> 2-4 <b>✓</b> · 1-3 <b>✓</b> · <span class="i18n" lang="es">sílabas</span><span class="i18n" lang="en">syllables</span> 10-9-8-12</p>
+</article>
+<article>
+  <p class="kicker"><span class="i18n" lang="es">Según El País</span><span class="i18n" lang="en">From El País</span></p>
+  <p class="titular"><a href="https://elpais.com/tecnologia/2026-10-23/el-ano-negro-de-meta-las-claves-de-la-mayor-multa-a-una-tecnologica-por-cometer-43-millones-de-infracciones.html" rel="noopener"><span class="i18n" lang="es">El año negro de Meta: las claves de la mayor multa a una tecnológica por cometer 43 millones de infracciones</span><span class="i18n" lang="en">Meta&#x27;s Terrible Year: The Key Details of the Biggest Fine Ever for a Tech Company Due to 43 Million Violations</span></a></p>
+  <p class="versos" lang="es"><span>Meta creyó dominar,</span><span>su imperio, un caudal real,</span><span>llegó la Flaca a asestar,</span><span>y lo envió al final, fatal.</span></p>
+  <p class="en" lang="en"><span>Meta thought he could dominate,</span><span>his empire, a royal flow,</span><span>La Flaca arrived to deliver a blow,</span><span>and sent him to the final, fatal end.</span></p>
+  <audio controls preload="none" src="audio/calavera-03.mp3"></audio>
+  <p class="check"><span class="i18n" lang="es">rima</span><span class="i18n" lang="en">rhyme</span> 2-4 <b>✓</b> · 1-3 <b>✓</b> · <span class="i18n" lang="es">sílabas</span><span class="i18n" lang="en">syllables</span> 8-8-8-8</p>
+</article>
+<article>
+  <p class="kicker"><span class="i18n" lang="es">Según El País</span><span class="i18n" lang="en">From El País</span></p>
+  <p class="titular"><a href="https://elpais.com/tecnologia/2026-10-22/millones-de-intentos-de-ataque-en-pocas-horas-tras-destaparse-fallos-graves-en-miles-de-webs.html" rel="noopener"><span class="i18n" lang="es">Millones de ciberataques en pocas horas, tras descubrir la IA un fallo en el corazón del 70% de las webs</span><span class="i18n" lang="en">Millions of Cyberattacks in a Few Hours After AI Discovered a Flaw in the Heart of 70% of Websites</span></a></p>
+  <p class="versos" lang="es"><span>La web crecía sin precaución,</span><span>un fallo oculto, sin razón.</span><span>La IA lo encontró, ¡qué desazón!,</span><span>y el sistema cayó, sin perdón.</span></p>
+  <p class="en" lang="en"><span>The web grew without caution,</span><span>A hidden flaw, without reason.</span><span>The AI found it, what dismay!</span><span>And the system fell, without forgiveness.</span></p>
+  <audio controls preload="none" src="audio/calavera-04.mp3"></audio>
+  <p class="check"><span class="i18n" lang="es">rima</span><span class="i18n" lang="en">rhyme</span> 2-4 <b>✓</b> · 1-3 <b>✓</b> · <span class="i18n" lang="es">sílabas</span><span class="i18n" lang="en">syllables</span> 10-9-9-10</p>
+</article>
+<article>
+  <p class="kicker"><span class="i18n" lang="es">Según La Voz de Galicia</span><span class="i18n" lang="en">From La Voz de Galicia</span></p>
+  <p class="titular"><a href="https://news.google.com/rss/articles/CBMi6gFBVV95cUxQazg3cVl4UjFQTGhZdW1sbHZ1Mkl0ZGl4SFp3UDBKX3NMQzk1NjlZRGRzaVUwTEhyYmZhc0IyUGllR1p2VWdRQm9NNUR3LThkS0NqNmN1Qm5Rb2NuVFFyUEEzRDhUR0pobjFscW5Yc2l3NGVjazd4UmhNUWZHcld5WnNvZ3M5RjdSZ29XTHhTeUk2QVlOVUNQRHdXWnRPYU9IVWpIUTdrYmRCclJXVjRXVVo4TmdnNW1NZ1M5UVI3ZlppVVZoQjQzekNJUzl0MXlJUmZnR2kxZW5vaTVvelZqaTEydURyZkJwUGfSAYYCQVVfeXFMT3hUb1lvU19TQ3ZoOVk5Und2ZmlobEotTDdoTWZMeUMyU1l0eVB0ZURoaWJ1WFpiLWZyTklPU3U4a21XQ1FLS0t1a3dabzBhWm5qdXl3bEYwbUpESUlsUU0tMzhCWjBJZG5QbUpDWk5DTGhxNHZtNDBNN2l3VVhPeUFOcmFOT2dOWWZ2OVRMdDZ2MU40NmVOSzJYOGNlcXZQLXYzUzVBbUREcm9WSUJOeTJ2NGkwYkFVZ2NtSEdKWTFUZm5HaFhYVjBQMUJWQm1ubXpyRnI4anhWV2g3cVZCSlUxNHhqVzdwS0hkVlhkYmV4bGdfV0ZCeE9lWTVWVzNwUGt0RXJPZw?oc=5" rel="noopener"><span class="i18n" lang="es">La caída de las tecnológicas se acelera por las incertidumbres de su gasto en inteligencia artificial</span><span class="i18n" lang="en">Tech Stocks Fall Further Amid AI Spending Concerns</span></a></p>
+  <p class="versos" lang="es"><span>La nube, promesa audaz,</span><span>se hunde en un oscuro plan,</span><span>El dato, un valor fatal,</span><span>se esfuma, ¡qué desengaño, van!</span></p>
+  <p class="en" lang="en"><span>The cloud, a bold promise,</span><span>sinks into a dark scheme,</span><span>The data, a fatal value,</span><span>vanishes, what a disappointment, fleeting!</span></p>
+  <audio controls preload="none" src="audio/calavera-05.mp3"></audio>
+  <p class="check"><span class="i18n" lang="es">rima</span><span class="i18n" lang="en">rhyme</span> 2-4 <b>✓</b> · <span class="i18n" lang="es">sílabas</span><span class="i18n" lang="en">syllables</span> 8-8-8-10</p>
+</article>
+  </section>
+  <section class="about">
+    <h2><span class="i18n" lang="es">¿Qué es esto?</span><span class="i18n" lang="en">What is this?</span></h2>
+    <p><span class="i18n" lang="es">Una <em>calavera literaria</em> es un poema satírico que en México se escribe por el Día de Muertos, imaginando que la Muerte viene a llevarse a alguien. En el siglo XIX la prensa las usaba para burlarse de los poderosos; las calaveras de José Guadalupe Posada, la Catrina entre ellas, nacieron en esas páginas.</span><span class="i18n" lang="en">A <em>calavera literaria</em> is a short satirical poem Mexicans write for the Day of the Dead, imagining Death coming to take someone away. In the 19th century the press used them to mock the powerful; José Guadalupe Posada's skeletons, the Catrina among them, were born on those pages.</span></p>
+    <p><span class="i18n" lang="es">Catrina News recupera esa tradición para la tecnología: lee los titulares del día, descarta los que hablan de personas concretas o de tragedias, y escribe una calavera para las empresas y productos de la noticia. <strong>Gemma 3</strong>, un modelo abierto, escribe los versos en un portátil con Ollama. Python puro comprueba cada rima y cada sílaba y le dice al modelo qué corregir. ElevenLabs le pone la voz a la Catrina.</span><span class="i18n" lang="en">Catrina News brings that back for tech: it reads today's headlines, skips anything about real people or tragedies, and writes a calavera for the companies and products in the news. <strong>Gemma 3</strong>, an open-weight model, writes the verses on a laptop through Ollama. Plain Python checks every rhyme and syllable count and tells the model exactly what to fix. ElevenLabs gives the Catrina her voice.</span></p>
+    <p><span class="i18n" lang="es">La rima no sobrevive a la traducción: el español es el original, y el inglés de cada calavera es una traducción verso a verso para quien no lo habla.</span><span class="i18n" lang="en">Rhymes don't survive translation, so the Spanish is the original and the English below each calavera is a line-by-line gloss.</span></p>
+  </section>
+  <footer>
+    <span class="i18n" lang="es">Escrita por <strong>gemma3:12b</strong>, un modelo abierto que corre en un portátil. Recitada por la Catrina con la voz de ElevenLabs. La rima y la métrica no las juzga el modelo: las comprueba el código, verso a verso.</span><span class="i18n" lang="en">Written by <strong>gemma3:12b</strong>, an open model running on a laptop. Read aloud by the Catrina, voiced with ElevenLabs. The model doesn't judge its own rhymes: code checks every line.</span>
+  </footer>
+</main>
+</body>
+</html>

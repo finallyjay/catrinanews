@@ -61,6 +61,14 @@ article:last-child:nth-child(odd) { grid-column:1 / -1; border-right:none; text-
 audio { width:100%; height:32px; margin:0 0 8px; filter:sepia(.6); }
 .check { font-family:ui-monospace, Menlo, monospace; font-size:.7rem; color:var(--muted); }
 .check b { color:var(--red); font-weight:600; }
+html[data-lang="en"] .i18n[lang="es"], html[data-lang="es"] .i18n[lang="en"] { display:none; }
+.langs button { font:inherit; font-size:.75rem; letter-spacing:.08em; background:none; border:1px solid var(--ink);
+  color:var(--ink); padding:1px 6px; cursor:pointer; }
+html[data-lang="en"] .b-en, html[data-lang="es"] .b-es { background:var(--ink); color:var(--paper); }
+html[data-lang="en"] .en { font-size:.95rem; color:var(--ink); }
+.about { padding:18px 6px 4px; border-bottom:4px double var(--ink); }
+.about h2 { font-family:"Rye", serif; font-weight:400; font-size:1.4rem; margin:0 0 8px; text-align:center; }
+.about p { margin:0 0 10px; line-height:1.5; }
 footer { text-align:center; font-size:.85rem; padding-top:14px; font-style:italic; }
 footer strong { font-style:normal; }
 @media (max-width:700px) {
@@ -71,38 +79,89 @@ footer strong { font-style:normal; }
 """
 
 
+MONTHS = ["January", "February", "March", "April", "May", "June", "July",
+          "August", "September", "October", "November", "December"]
+
+
 def fecha_larga(iso: str) -> str:
     y, m, d = (int(x) for x in iso.split("-"))
     return f"{d} de {MESES[m - 1]} de {y}"
+
+
+def date_long(iso: str) -> str:
+    y, m, d = (int(x) for x in iso.split("-"))
+    return f"{MONTHS[m - 1]} {d}, {y}"
+
+
+def t(es: str, en: str) -> str:
+    """Both languages in the page; CSS shows the active one (works without JS: English)."""
+    return f'<span class="i18n" lang="es">{es}</span><span class="i18n" lang="en">{en}</span>'
 
 
 def articulo(c: dict) -> str:
     e = html.escape
     fuente = FUENTES.get(c.get("fuente", ""), c.get("fuente", ""))
     titular = e(c["titular"])
+    if c.get("titular_en"):
+        titular = t(titular, e(c["titular_en"]))
     if c.get("url", "").startswith("https://"):
         titular = f'<a href="{e(c["url"])}" rel="noopener">{titular}</a>'
     versos = "".join(f"<span>{e(v)}</span>" for v in c["versos"])
     en = "".join(f"<span>{e(v)}</span>" for v in c.get("english", []))
     check = c.get("check", {})
     meter = "-".join(str(m) for m in check.get("meter", []))
-    rima = "rima 2-4 <b>✓</b>" if check.get("ok") else "rima 2-4 ✗"
+    rima = t("rima", "rhyme") + (" 2-4 <b>✓</b>" if check.get("ok") else " 2-4 ✗")
     if check.get("rhyme_1_3"):
         rima += " · 1-3 <b>✓</b>"
     return f"""<article>
-  <p class="kicker">Según {e(fuente)}</p>
+  <p class="kicker">{t(f"Según {e(fuente)}", f"From {e(fuente)}")}</p>
   <p class="titular">{titular}</p>
   <p class="versos" lang="es">{versos}</p>
   {f'<p class="en" lang="en">{en}</p>' if en else ''}
   {f'<audio controls preload="none" src="{e(c["audio"])}"></audio>' if c.get("audio") else ''}
-  <p class="check">{rima} · sílabas {e(meter)}</p>
+  <p class="check">{rima} · {t("sílabas", "syllables")} {e(meter)}</p>
 </article>"""
+
+
+ABOUT_EN_1 = (
+    "A <em>calavera literaria</em> is a short satirical poem Mexicans write for the Day of the Dead, "
+    "imagining Death coming to take someone away. In the 19th century the press used them to mock "
+    "the powerful; José Guadalupe Posada's skeletons, the Catrina among them, were born on those pages."
+)
+ABOUT_ES_1 = (
+    "Una <em>calavera literaria</em> es un poema satírico que en México se escribe por el Día de Muertos, "
+    "imaginando que la Muerte viene a llevarse a alguien. En el siglo XIX la prensa las usaba para burlarse "
+    "de los poderosos; las calaveras de José Guadalupe Posada, la Catrina entre ellas, nacieron en esas páginas."
+)
+ABOUT_EN_2 = (
+    "Catrina News brings that back for tech: it reads today's headlines, skips anything about real people "
+    "or tragedies, and writes a calavera for the companies and products in the news. "
+    "<strong>Gemma 3</strong>, an open-weight model, writes the verses on a laptop through Ollama. "
+    "Plain Python checks every rhyme and syllable count and tells the model exactly what to fix. "
+    "ElevenLabs gives the Catrina her voice."
+)
+ABOUT_ES_2 = (
+    "Catrina News recupera esa tradición para la tecnología: lee los titulares del día, descarta los que "
+    "hablan de personas concretas o de tragedias, y escribe una calavera para las empresas y productos "
+    "de la noticia. <strong>Gemma 3</strong>, un modelo abierto, escribe los versos en un portátil con Ollama. "
+    "Python puro comprueba cada rima y cada sílaba y le dice al modelo qué corregir. "
+    "ElevenLabs le pone la voz a la Catrina."
+)
+ABOUT_EN_3 = (
+    "Rhymes don't survive translation, so the Spanish is the original and the English below each "
+    "calavera is a line-by-line gloss."
+)
+ABOUT_ES_3 = (
+    "La rima no sobrevive a la traducción: el español es el original, y el inglés de cada calavera "
+    "es una traducción verso a verso para quien no lo habla."
+)
 
 
 def render(data: dict) -> str:
     arts = "\n".join(articulo(c) for c in data["calaveras"] if c.get("versos"))
+    voiced = any(c.get("audio") for c in data["calaveras"])
     return f"""<!doctype html>
-<html lang="es">
+<html lang="en" data-lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -113,24 +172,60 @@ def render(data: dict) -> str:
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Rye&display=swap" rel="stylesheet">
 <style>{CSS}</style>
+<script>
+  // Spanish for Spanish-speaking browsers, English otherwise; the choice is remembered.
+  (function () {{
+    var saved = localStorage.getItem("lang");
+    var lang = saved || ((navigator.language || "").slice(0, 2) === "es" ? "es" : "en");
+    document.documentElement.dataset.lang = lang;
+    document.documentElement.lang = lang;
+  }})();
+  function setLang(lang) {{
+    document.documentElement.dataset.lang = lang;
+    document.documentElement.lang = lang;
+    localStorage.setItem("lang", lang);
+  }}
+</script>
 </head>
 <body>
 <main class="hoja">
-  <div class="top"><span>Hoja volante</span><span>{fecha_larga(data["fecha"])}</span><span>Día de Muertos</span></div>
+  <div class="top">
+    <span>{t("Hoja volante", "Broadside")}</span>
+    <span>{t(fecha_larga(data["fecha"]), date_long(data["fecha"]))}</span>
+    <span class="langs" role="group" aria-label="Language / Idioma">
+      <button type="button" onclick="setLang('en')" class="b-en">EN</button>
+      <button type="button" onclick="setLang('es')" class="b-es">ES</button>
+    </span>
+  </div>
   <header>
     {CALAVERA_SVG}
     <h1>Catrina <em>News</em></h1>
     <p class="lema">¡Gran Calavera Tecnológica!</p>
-    <p class="sub">Donde la Flaca visita a las empresas que salieron hoy en las noticias,
-    como hacía la prensa satírica del siglo XIX con los poderosos.</p>
+    <p class="sub">{t(
+        "Donde la Flaca visita a las empresas que salieron hoy en las noticias, "
+        "como hacía la prensa satírica del siglo XIX con los poderosos.",
+        "Where Death pays a visit to the tech companies in today's news, "
+        "the way Mexico's 19th-century satirical press mocked the powerful.",
+    )}</p>
   </header>
   <section class="grid">
 {arts}
   </section>
+  <section class="about">
+    <h2>{t("¿Qué es esto?", "What is this?")}</h2>
+    <p>{t(ABOUT_ES_1, ABOUT_EN_1)}</p>
+    <p>{t(ABOUT_ES_2, ABOUT_EN_2)}</p>
+    <p>{t(ABOUT_ES_3, ABOUT_EN_3)}</p>
+  </section>
   <footer>
-    Escrita por <strong>{html.escape(data["modelo"])}</strong>, un modelo abierto que corre en un portátil.
-    {"Recitada por la Catrina con la voz de ElevenLabs." if any(c.get("audio") for c in data["calaveras"]) else ""}
-    La rima y la métrica no las juzga el modelo: las comprueba el código, verso a verso.
+    {t(
+        f'Escrita por <strong>{html.escape(data["modelo"])}</strong>, un modelo abierto que corre en un portátil. '
+        + ("Recitada por la Catrina con la voz de ElevenLabs. " if voiced else "")
+        + "La rima y la métrica no las juzga el modelo: las comprueba el código, verso a verso.",
+        f'Written by <strong>{html.escape(data["modelo"])}</strong>, an open model running on a laptop. '
+        + ("Read aloud by the Catrina, voiced with ElevenLabs. " if voiced else "")
+        + "The model doesn't judge its own rhymes: code checks every line.",
+    )}
   </footer>
 </main>
 </body>
