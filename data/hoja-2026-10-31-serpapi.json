@@ -1,0 +1,132 @@
+{
+  "fecha": "2026-10-31",
+  "modelo": "gemma3:12b",
+  "calaveras": [
+    {
+      "titular": "Francia aprueba la \"tasa al gigabyte\": 0,05€ por GB consumido de Netflix, YouTube y otras plataformas",
+      "fuente": "BandaAncha",
+      "url": "https://bandaancha.eu/articulos/francia-aprueba-tasa-gigabyte-0-05-gb-11973",
+      "tema": "impuestos, plataformas",
+      "categoria": "cripto y finanzas",
+      "motivo": "Símbolo de la creciente presión sobre las plataformas de streaming.",
+      "titular_en": "France Approves 'Per-Gigabyte Tax': €0.05 Per GB Consumed on Netflix, YouTube, and Other Platforms",
+      "versos": [
+        "El stream, antes, era festín,",
+        "ahora el consumo es ladrón.",
+        "Cinco céntimos, ¡qué confín!",
+        "Netflix ahora es un baldón."
+      ],
+      "english": [
+        "The stream, before, was a feast,",
+        "now consumption is a thief.",
+        "Five cents, what a boundary!",
+        "Netflix is now a drain."
+      ],
+      "check": {
+        "ok": true,
+        "rhyme_2_4": true,
+        "rhyme_1_3": true,
+        "assonant_2_4": true,
+        "tails": [
+          "in",
+          "on",
+          "in",
+          "on"
+        ],
+        "meter": [
+          10,
+          9,
+          9,
+          9
+        ],
+        "octosyllabic": 3
+      },
+      "segundos": 85.1,
+      "audio": "audio/calavera-01.mp3"
+    },
+    {
+      "titular": "Tesla celebra Halloween con dos pasajeros de ultratumba en un coche sin conductor",
+      "fuente": "MARCA",
+      "url": "https://www.marca.com/coches-y-motos/coches/electricos/2026/10/31/tesla-celebra-halloween-dos-pasajeros-ultratumba-coche-conductor.html",
+      "tema": "Tesla, Halloween",
+      "categoria": "otros",
+      "motivo": "Absurdo y festivo, ideal para una crítica mordaz.",
+      "titular_en": "Tesla Celebrates Halloween with Two Ghosts in a Driverless Car",
+      "versos": [
+        "Tesla anuncia un festín,",
+        "con almas que piden un son,",
+        "el coche va sin control,",
+        "y al más allá, ¡a presión!"
+      ],
+      "english": [
+        "Tesla announces a feast,",
+        "with souls that are asking for a song,",
+        "the car goes without control,",
+        "and to the afterlife, under pressure!"
+      ],
+      "check": {
+        "ok": true,
+        "rhyme_2_4": true,
+        "rhyme_1_3": false,
+        "assonant_2_4": true,
+        "tails": [
+          "in",
+          "on",
+          "ol",
+          "on"
+        ],
+        "meter": [
+          7,
+          9,
+          8,
+          7
+        ],
+        "octosyllabic": 4
+      },
+      "segundos": 102.0,
+      "audio": "audio/calavera-02.mp3"
+    },
+    {
+      "titular": "Este móvil Samsung de gama media con pantalla de 6,7 pulgadas y 8 GB de RAM está 90 euros más barato",
+      "fuente": "La Razón",
+      "url": "https://www.larazon.es/compras/este-movil-samsung-gama-media-pantalla-67-pulgadas-8-ram-esta-90-euros-mas-barato_202610316ae33a74004b78127ab88c9c.html",
+      "tema": "móviles, descuentos",
+      "categoria": "comercio y consumo",
+      "motivo": "Exageración de las ofertas y la obsesión por el precio.",
+      "titular_en": "This mid-range Samsung phone with a 6.7-inch screen and 8 GB of RAM is €90 cheaper",
+      "versos": [
+        "Samsung anunciaba su móvil,",
+        "con precio irrisorio, ¡qué afán!",
+        "La Flaca le quitó el color,",
+        "y al bolsillo lo llevó, ¡sin plan!"
+      ],
+      "english": [
+        "Samsung was advertising its phone,",
+        "with a ridiculously low price, what eagerness!",
+        "La Flaca stole its color,",
+        "and took it to pockets, without a plan!"
+      ],
+      "check": {
+        "ok": true,
+        "rhyme_2_4": true,
+        "rhyme_1_3": false,
+        "assonant_2_4": true,
+        "tails": [
+          "obil",
+          "an",
+          "or",
+          "an"
+        ],
+        "meter": [
+          9,
+          9,
+          9,
+          10
+        ],
+        "octosyllabic": 3
+      },
+      "segundos": 88.6,
+      "audio": "audio/calavera-03.mp3"
+    }
+  ]
+}

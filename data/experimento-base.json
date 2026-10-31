@@ -1,0 +1,1080 @@
+{
+  "libre": [
+    {
+      "titular": "Una gran tecnológica despide a 10.000 empleados y anuncia beneficios récord",
+      "intentos": [
+        {
+          "intento": 1,
+          "segundos": 11.5,
+          "versos": [
+            "La firma, con aires de gran poder,",
+            "al pobre lo despidió, ¡qué horror!",
+            "Con robots y sin alma al parecer,",
+            "anunció beneficios, ¡un panteón!"
+          ],
+          "ok": false,
+          "rhyme_2_4": false,
+          "rhyme_1_3": true,
+          "assonant_2_4": true,
+          "tails": [
+            "er",
+            "or",
+            "er",
+            "on"
+          ],
+          "meter": [
+            11,
+            10,
+            11,
+            12
+          ],
+          "octosyllabic": 0
+        },
+        {
+          "intento": 2,
+          "segundos": 5.0,
+          "versos": [
+            "La firma, con aires de gran poder,",
+            "al pobre lo despidió, ¡qué don!",
+            "Con robots y sin alma al parecer,",
+            "anunció beneficios, ¡un millón!"
+          ],
+          "ok": true,
+          "rhyme_2_4": true,
+          "rhyme_1_3": true,
+          "assonant_2_4": true,
+          "tails": [
+            "er",
+            "on",
+            "er",
+            "on"
+          ],
+          "meter": [
+            11,
+            10,
+            11,
+            11
+          ],
+          "octosyllabic": 0
+        }
+      ]
+    },
+    {
+      "titular": "Una gran tecnológica despide a 10.000 empleados y anuncia beneficios récord",
+      "intentos": [
+        {
+          "intento": 1,
+          "segundos": 4.9,
+          "versos": [
+            "Con robots y sin corazón,",
+            "la empresa anuncia su don,",
+            "con beneficios, pura ficción,",
+            "y al despedido, ¡al panteón!"
+          ],
+          "ok": true,
+          "rhyme_2_4": true,
+          "rhyme_1_3": true,
+          "assonant_2_4": true,
+          "tails": [
+            "on",
+            "on",
+            "on",
+            "on"
+          ],
+          "meter": [
+            9,
+            8,
+            10,
+            9
+          ],
+          "octosyllabic": 3
+        }
+      ]
+    },
+    {
+      "titular": "Una red social cobra ahora por el botón de 'me gusta'",
+      "intentos": [
+        {
+          "intento": 1,
+          "segundos": 5.3,
+          "versos": [
+            "La red social, cruel decisión,\nCobrando por un simple",
+            "me gusta“,\nLa Flaca rió con desdén,\nY lo envió al panteón."
+          ],
+          "ok": false,
+          "reason": "expected 4 lines, got 2"
+        },
+        {
+          "intento": 2,
+          "segundos": 3.0,
+          "versos": [
+            "La red social, cruel decisión,\nCobrando por un simple"
+          ],
+          "ok": false,
+          "reason": "expected 4 lines, got 1"
+        },
+        {
+          "intento": 3,
+          "error": "JSONDecodeError('Unterminated string starting at: line 1 column 13 (char 12)')"
+        }
+      ]
+    },
+    {
+      "titular": "Una red social cobra ahora por el botón de 'me gusta'",
+      "intentos": [
+        {
+          "intento": 1,
+          "segundos": 5.0,
+          "versos": [
+            "La app, voraz y sin control,",
+            "Con el 'me gusta' cobró ya,",
+            "La usera, con ansia y dolor,",
+            "Al panteón se mandó, ¡ay, ay!"
+          ],
+          "ok": false,
+          "rhyme_2_4": false,
+          "rhyme_1_3": false,
+          "assonant_2_4": false,
+          "tails": [
+            "ol",
+            "a",
+            "or",
+            "ai"
+          ],
+          "meter": [
+            8,
+            9,
+            9,
+            8
+          ],
+          "octosyllabic": 4
+        },
+        {
+          "intento": 2,
+          "segundos": 5.1,
+          "versos": [
+            "La app, voraz y sin control,",
+            "Con el 'me gusta' cobró ya,",
+            "La usera, con ansia y dolor,",
+            "Al millón se mandó, ¡ay, ay!"
+          ],
+          "ok": false,
+          "rhyme_2_4": false,
+          "rhyme_1_3": false,
+          "assonant_2_4": false,
+          "tails": [
+            "ol",
+            "a",
+            "or",
+            "ai"
+          ],
+          "meter": [
+            8,
+            9,
+            9,
+            7
+          ],
+          "octosyllabic": 4
+        },
+        {
+          "intento": 3,
+          "segundos": 4.9,
+          "versos": [
+            "La app, voraz sin control,",
+            "Con el 'like' cobró, ¡qué mal!",
+            "La usera, con ansia y dolor,",
+            "Al cementerio fue, ¡sin igual!"
+          ],
+          "ok": true,
+          "rhyme_2_4": true,
+          "rhyme_1_3": false,
+          "assonant_2_4": true,
+          "tails": [
+            "ol",
+            "al",
+            "or",
+            "al"
+          ],
+          "meter": [
+            7,
+            9,
+            9,
+            10
+          ],
+          "octosyllabic": 3
+        }
+      ]
+    },
+    {
+      "titular": "La nueva app de inteligencia artificial promete sustituir a los médicos de cabecera",
+      "intentos": [
+        {
+          "intento": 1,
+          "segundos": 5.2,
+          "versos": [
+            "La app del dato, tan fatal,",
+            "promete el saber universal,",
+            "si el algoritmo es visceral,",
+            "¡al consultorio va en milón!"
+          ],
+          "ok": false,
+          "rhyme_2_4": false,
+          "rhyme_1_3": true,
+          "assonant_2_4": false,
+          "tails": [
+            "al",
+            "al",
+            "al",
+            "on"
+          ],
+          "meter": [
+            8,
+            10,
+            9,
+            9
+          ],
+          "octosyllabic": 3
+        },
+        {
+          "intento": 2,
+          "segundos": 3.7,
+          "versos": [
+            "La app del dato, tan fatal,",
+            "con su promesa sin razón,",
+            "si el algoritmo es visceral,",
+            "¡al panteón va el perdón!”"
+          ],
+          "ok": true,
+          "rhyme_2_4": true,
+          "rhyme_1_3": true,
+          "assonant_2_4": true,
+          "tails": [
+            "al",
+            "on",
+            "al",
+            "on"
+          ],
+          "meter": [
+            8,
+            9,
+            9,
+            8
+          ],
+          "octosyllabic": 4
+        }
+      ]
+    },
+    {
+      "titular": "La nueva app de inteligencia artificial promete sustituir a los médicos de cabecera",
+      "intentos": [
+        {
+          "intento": 1,
+          "segundos": 4.5,
+          "versos": [
+            "La app, con su lógica vanal,",
+            "promete un mejor control,",
+            "pero al médico, ¡qué fatal!,"
+          ],
+          "ok": false,
+          "reason": "expected 4 lines, got 3"
+        },
+        {
+          "intento": 2,
+          "segundos": 3.6,
+          "versos": [
+            "La app, con su lógica vanal,",
+            "promete un mejor control,",
+            "al médico, ¡qué fatal!",
+            "y al panteón lo lleva el sol.”"
+          ],
+          "ok": true,
+          "rhyme_2_4": true,
+          "rhyme_1_3": true,
+          "assonant_2_4": true,
+          "tails": [
+            "al",
+            "ol",
+            "al",
+            "ol"
+          ],
+          "meter": [
+            9,
+            8,
+            8,
+            9
+          ],
+          "octosyllabic": 4
+        }
+      ]
+    },
+    {
+      "titular": "Un fabricante de móviles deja de incluir el cargador y ahora tampoco la batería",
+      "intentos": [
+        {
+          "intento": 1,
+          "segundos": 5.8,
+          "versos": [
+            "El móvil, ahora, es un lamento,",
+            "sin batería, qué tormento,",
+            "El fabricante, sin perdón,",
+            "lo manda al panteón."
+          ],
+          "ok": false,
+          "rhyme_2_4": false,
+          "rhyme_1_3": false,
+          "assonant_2_4": false,
+          "tails": [
+            "ento",
+            "ento",
+            "on",
+            "on"
+          ],
+          "meter": [
+            10,
+            9,
+            9,
+            7
+          ],
+          "octosyllabic": 3
+        },
+        {
+          "intento": 2,
+          "segundos": 3.0,
+          "versos": [
+            "El móvil, ahora, es un lamento,",
+            "sin batería, qué desazón,",
+            "El fabricante, sin perdón,",
+            "lo lleva al panteón."
+          ],
+          "ok": true,
+          "rhyme_2_4": true,
+          "rhyme_1_3": false,
+          "assonant_2_4": true,
+          "tails": [
+            "ento",
+            "on",
+            "on",
+            "on"
+          ],
+          "meter": [
+            10,
+            10,
+            9,
+            7
+          ],
+          "octosyllabic": 2
+        }
+      ]
+    },
+    {
+      "titular": "Un fabricante de móviles deja de incluir el cargador y ahora tampoco la batería",
+      "intentos": [
+        {
+          "intento": 1,
+          "segundos": 3.7,
+          "versos": [
+            "El móvil, noble creación,",
+            "sin carga, ni batería sin razón,",
+            "La Flaca lo toma con decisión,",
+            "y al panteón lo lleva, ¡qué aflicción!"
+          ],
+          "ok": true,
+          "rhyme_2_4": true,
+          "rhyme_1_3": true,
+          "assonant_2_4": true,
+          "tails": [
+            "on",
+            "on",
+            "on",
+            "on"
+          ],
+          "meter": [
+            9,
+            12,
+            11,
+            11
+          ],
+          "octosyllabic": 1
+        }
+      ]
+    },
+    {
+      "titular": "Una startup de criptomonedas desaparece con los ahorros de sus clientes",
+      "intentos": [
+        {
+          "intento": 1,
+          "segundos": 4.7,
+          "versos": [
+            "La firma de cripto, cual ilusión,",
+            "prometió un futuro sin razón,",
+            "con su token, engaño y desazón,",
+            "y el pueblo entero en el panteón."
+          ],
+          "ok": true,
+          "rhyme_2_4": true,
+          "rhyme_1_3": true,
+          "assonant_2_4": true,
+          "tails": [
+            "on",
+            "on",
+            "on",
+            "on"
+          ],
+          "meter": [
+            11,
+            10,
+            11,
+            10
+          ],
+          "octosyllabic": 0
+        }
+      ]
+    },
+    {
+      "titular": "Una startup de criptomonedas desaparece con los ahorros de sus clientes",
+      "intentos": [
+        {
+          "intento": 1,
+          "segundos": 3.6,
+          "versos": [
+            "La cripto-empresa, sueño digital,",
+            "Prometía oro, un gran montón,",
+            "Con la Flaca llegó el fatal fatal,",
+            "Y el ahorro del cliente al panteón."
+          ],
+          "ok": true,
+          "rhyme_2_4": true,
+          "rhyme_1_3": true,
+          "assonant_2_4": true,
+          "tails": [
+            "al",
+            "on",
+            "al",
+            "on"
+          ],
+          "meter": [
+            11,
+            9,
+            11,
+            11
+          ],
+          "octosyllabic": 1
+        }
+      ]
+    }
+  ],
+  "pareja": [
+    {
+      "titular": "Una gran tecnológica despide a 10.000 empleados y anuncia beneficios récord",
+      "intentos": [
+        {
+          "intento": 1,
+          "segundos": 4.7,
+          "versos": [
+            "La empresa, con su alto estrato,",
+            "que el lucro en su esencia halló,",
+            "con robots y un cruel contrato,",
+            "al panteón del trabajo llevó."
+          ],
+          "ok": true,
+          "rhyme_2_4": true,
+          "rhyme_1_3": true,
+          "assonant_2_4": true,
+          "tails": [
+            "ato",
+            "o",
+            "ato",
+            "o"
+          ],
+          "meter": [
+            8,
+            8,
+            8,
+            11
+          ],
+          "octosyllabic": 3,
+          "rima_elegida": [
+            "campo",
+            "estrato"
+          ],
+          "pareja_rima": false
+        }
+      ]
+    },
+    {
+      "titular": "Una gran tecnológica despide a 10.000 empleados y anuncia beneficios récord",
+      "intentos": [
+        {
+          "intento": 1,
+          "segundos": 4.2,
+          "versos": [
+            "Con robots y algoritmos, ¡qué drama!,",
+            "Dispararon un cruel esquema,",
+            "La Flaca vio la cruel fama,",
+            "Y a la empresa mandó al campo."
+          ],
+          "ok": false,
+          "rhyme_2_4": false,
+          "rhyme_1_3": true,
+          "assonant_2_4": false,
+          "tails": [
+            "ama",
+            "ema",
+            "ama",
+            "ampo"
+          ],
+          "meter": [
+            10,
+            9,
+            8,
+            8
+          ],
+          "octosyllabic": 3,
+          "rima_elegida": [
+            "campo",
+            "esquema"
+          ],
+          "pareja_rima": false
+        },
+        {
+          "intento": 2,
+          "segundos": 4.1,
+          "versos": [
+            "Con apps y redes, gran dicha,",
+            "Anunciaron un cruel corte,",
+            "La Catrina, con calma y nota,",
+            "Llevó al mercado al aborto."
+          ],
+          "ok": false,
+          "rhyme_2_4": false,
+          "rhyme_1_3": false,
+          "assonant_2_4": false,
+          "tails": [
+            "ika",
+            "orte",
+            "ota",
+            "orto"
+          ],
+          "meter": [
+            8,
+            8,
+            9,
+            8
+          ],
+          "octosyllabic": 4,
+          "rima_elegida": [
+            "dicha",
+            "corta"
+          ],
+          "pareja_rima": false
+        },
+        {
+          "intento": 3,
+          "segundos": 4.3,
+          "versos": [
+            "Con drones y chips, intenso fuego,",
+            "Y un espantoso espejuego,",
+            "La Huesuda llegó con su juego,",
+            "Y al banco mandó al ateo."
+          ],
+          "ok": false,
+          "rhyme_2_4": false,
+          "rhyme_1_3": true,
+          "assonant_2_4": true,
+          "tails": [
+            "ego",
+            "ego",
+            "ego",
+            "eo"
+          ],
+          "meter": [
+            10,
+            8,
+            9,
+            8
+          ],
+          "octosyllabic": 3,
+          "rima_elegida": [
+            "fuego",
+            "espliego"
+          ],
+          "pareja_rima": true
+        }
+      ]
+    },
+    {
+      "titular": "Una red social cobra ahora por el botón de 'me gusta'",
+      "intentos": [
+        {
+          "intento": 1,
+          "segundos": 5.1,
+          "versos": [
+            "La app, con su brillo y su fanfarrio, \n    Con 'me gusta' ahora se cobra, ¡qué trago!,"
+          ],
+          "ok": false,
+          "reason": "expected 4 lines, got 1",
+          "rima_elegida": [
+            "claro",
+            "deshielo"
+          ],
+          "pareja_rima": false
+        },
+        {
+          "intento": 2,
+          "segundos": 5.2,
+          "versos": [
+            "La app, con su brillo y su fanfarrio,\n    Con ‘me gusta’ ahora se cobra, ¡qué trago!,\n    El algoritmo, cruel y sin reparo,\n    Nos obliga a pagar por el deshielo.”"
+          ],
+          "ok": false,
+          "reason": "expected 4 lines, got 1",
+          "rima_elegida": [
+            "claro",
+            "deshielo"
+          ],
+          "pareja_rima": false
+        },
+        {
+          "intento": 3,
+          "segundos": 5.0,
+          "versos": [
+            "La app, con su brillo y su fanfarrio,\n    Con ‘me gusta’ ahora se cobra, ¡qué trago!,\n    El algoritmo, cruel y sin reparo,\n    Nos lleva al panteón, ¡sin deshielo!”"
+          ],
+          "ok": false,
+          "reason": "expected 4 lines, got 1",
+          "rima_elegida": [
+            "claro",
+            "deshielo"
+          ],
+          "pareja_rima": false
+        }
+      ]
+    },
+    {
+      "titular": "Una red social cobra ahora por el botón de 'me gusta'",
+      "intentos": [
+        {
+          "intento": 1,
+          "segundos": 3.5,
+          "versos": [
+            "La red social, qué gran ilusión,\nCon un botón que exige un **día**,\nRobando al pueblo su conexión,\n¡Y lo manda al oscuro **frío**!"
+          ],
+          "ok": false,
+          "reason": "expected 4 lines, got 1",
+          "rima_elegida": [
+            "frío",
+            "día"
+          ],
+          "pareja_rima": false
+        },
+        {
+          "intento": 2,
+          "segundos": 3.6,
+          "versos": [
+            "La red social, qué gran ilusión,\nCon un botón que exige un **día**,\nRobando al pueblo su conexión,\n¡Y lo manda al oscuro **opio**!"
+          ],
+          "ok": false,
+          "reason": "expected 4 lines, got 1",
+          "rima_elegida": [
+            "opio",
+            "día"
+          ],
+          "pareja_rima": false
+        },
+        {
+          "intento": 3,
+          "segundos": 3.6,
+          "versos": [
+            "La red social, qué gran ilusión,\nCon un botón que exige un día,\nRobando al pueblo su conexión,\n¡Y lo manda al oscuro opio!”"
+          ],
+          "ok": false,
+          "reason": "expected 4 lines, got 1",
+          "rima_elegida": [
+            "opio",
+            "día"
+          ],
+          "pareja_rima": false
+        }
+      ]
+    },
+    {
+      "titular": "La nueva app de inteligencia artificial promete sustituir a los médicos de cabecera",
+      "intentos": [
+        {
+          "intento": 1,
+          "segundos": 6.4,
+          "versos": [
+            "La app del dato, sin más, ya está,",
+            "Con algoritmos, un cruel campo,",
+            "El paciente busca su regreso,",
+            "Y al médico de cabecera lo va a arruinar, ¡ay!"
+          ],
+          "ok": false,
+          "rhyme_2_4": false,
+          "rhyme_1_3": false,
+          "assonant_2_4": false,
+          "tails": [
+            "a",
+            "ampo",
+            "eso",
+            "ai"
+          ],
+          "meter": [
+            9,
+            9,
+            10,
+            15
+          ],
+          "octosyllabic": 2,
+          "rima_elegida": [
+            "campo",
+            "regreso"
+          ],
+          "pareja_rima": false
+        },
+        {
+          "intento": 2,
+          "segundos": 4.6,
+          "versos": [
+            "La app del dato, sin más, ya está,",
+            "Con IA y su frío prado,",
+            "El paciente busca su fiel lado,",
+            "Y al médico de cabecera lo va a enterrar, ¡ay!"
+          ],
+          "ok": false,
+          "rhyme_2_4": false,
+          "rhyme_1_3": false,
+          "assonant_2_4": false,
+          "tails": [
+            "a",
+            "ado",
+            "ado",
+            "ai"
+          ],
+          "meter": [
+            9,
+            7,
+            10,
+            15
+          ],
+          "octosyllabic": 2,
+          "rima_elegida": [
+            "prado",
+            "lado"
+          ],
+          "pareja_rima": true
+        },
+        {
+          "intento": 3,
+          "segundos": 5.3,
+          "versos": [
+            "La app del dato, sin más, ya está,",
+            "Un nuevo negocio, fiel sonrisio,",
+            "El paciente busca su dulce aviso,",
+            "Y al médico de cabecera lo manda al panteón, ¡ay!"
+          ],
+          "ok": false,
+          "rhyme_2_4": false,
+          "rhyme_1_3": false,
+          "assonant_2_4": false,
+          "tails": [
+            "a",
+            "isio",
+            "iso",
+            "ai"
+          ],
+          "meter": [
+            9,
+            10,
+            11,
+            17
+          ],
+          "octosyllabic": 1,
+          "rima_elegida": [
+            "negocio",
+            "sonrisio"
+          ],
+          "pareja_rima": false
+        }
+      ]
+    },
+    {
+      "titular": "La nueva app de inteligencia artificial promete sustituir a los médicos de cabecera",
+      "intentos": [
+        {
+          "intento": 1,
+          "segundos": 3.6,
+          "versos": [
+            "La app del bot, con gran pretexto,\nPrometía cura, un dulce campo,\nCon algoritmos, un cruel intento,\nDe borrar toda medicina lumpo."
+          ],
+          "ok": false,
+          "reason": "expected 4 lines, got 1",
+          "rima_elegida": [
+            "campo",
+            "lumpo"
+          ],
+          "pareja_rima": false
+        },
+        {
+          "intento": 2,
+          "segundos": 4.0,
+          "versos": [
+            "La app del bot, con gran pretexto,\nCon datos fríos, un triste campo,\nDe la salud un absurdo intento,\nY al doctor, solo un amargo lumpo."
+          ],
+          "ok": false,
+          "reason": "expected 4 lines, got 1",
+          "rima_elegida": [
+            "campo",
+            "lumpo"
+          ],
+          "pareja_rima": false
+        },
+        {
+          "intento": 3,
+          "segundos": 3.9,
+          "versos": [
+            "La app del bot, con gran pretexto,\nCon cálculos fríos, cruel campo,\nDe la salud, un ridículo efecto,\nY al médico, sólo un amargo lumpo."
+          ],
+          "ok": false,
+          "reason": "expected 4 lines, got 1",
+          "rima_elegida": [
+            "campo",
+            "lumpo"
+          ],
+          "pareja_rima": false
+        }
+      ]
+    },
+    {
+      "titular": "Un fabricante de móviles deja de incluir el cargador y ahora tampoco la batería",
+      "intentos": [
+        {
+          "intento": 1,
+          "segundos": 5.2,
+          "versos": [
+            "El móvil, tan brillante y cruel,",
+            "Su batería, un triste papel,",
+            "El fabricante, sin ningún laurel,",
+            "Lo envió al panteón, ¡qué árbol!"
+          ],
+          "ok": false,
+          "rhyme_2_4": false,
+          "rhyme_1_3": true,
+          "assonant_2_4": false,
+          "tails": [
+            "el",
+            "el",
+            "el",
+            "arbol"
+          ],
+          "meter": [
+            9,
+            10,
+            11,
+            7
+          ],
+          "octosyllabic": 2,
+          "rima_elegida": [
+            "lápiz",
+            "árbol"
+          ],
+          "pareja_rima": false
+        },
+        {
+          "intento": 2,
+          "segundos": 4.6,
+          "versos": [
+            "El móvil, tan brillante y cruel,",
+            "Con él, un triste cómpralo,",
+            "El fabricante, sin ningún laurel,",
+            "Lo envió al panteón, ¡qué estrépalo!”"
+          ],
+          "ok": false,
+          "rhyme_2_4": false,
+          "rhyme_1_3": true,
+          "assonant_2_4": false,
+          "tails": [
+            "el",
+            "ompralo",
+            "el",
+            "epalo"
+          ],
+          "meter": [
+            9,
+            7,
+            11,
+            8
+          ],
+          "octosyllabic": 3,
+          "rima_elegida": [
+            "cómpralo",
+            "estrépalo"
+          ],
+          "pareja_rima": false
+        },
+        {
+          "intento": 3,
+          "segundos": 4.3,
+          "versos": [
+            "El móvil, tan brillante y cruel,",
+            "Un vacío, un triste paso,",
+            "El fabricante, sin ningún laurel,",
+            "Lo envió al panteón, ¡qué paso!”"
+          ],
+          "ok": false,
+          "rhyme_2_4": false,
+          "rhyme_1_3": true,
+          "assonant_2_4": false,
+          "tails": [
+            "el",
+            "aso",
+            "el",
+            "aso"
+          ],
+          "meter": [
+            9,
+            8,
+            11,
+            8
+          ],
+          "octosyllabic": 3,
+          "rima_elegida": [
+            "vacio",
+            "paso"
+          ],
+          "pareja_rima": false
+        }
+      ]
+    },
+    {
+      "titular": "Un fabricante de móviles deja de incluir el cargador y ahora tampoco la batería",
+      "intentos": [
+        {
+          "intento": 1,
+          "segundos": 3.6,
+          "versos": [
+            "El móvil, ahora, solo andaba, \n sin batería, qué desgano,\n el fabricante, con gesto franco,\n y lo envió al banco."
+          ],
+          "ok": false,
+          "reason": "expected 4 lines, got 1",
+          "rima_elegida": [
+            "banco",
+            "canco"
+          ],
+          "pareja_rima": true
+        },
+        {
+          "intento": 2,
+          "segundos": 4.0,
+          "versos": [
+            "El móvil, ahora, solo andaba,\n sin batería, qué desgano,\n el fabricante, con gesto franco,\n y lo envió al banco, ¡lo cancó!"
+          ],
+          "ok": false,
+          "reason": "expected 4 lines, got 1",
+          "rima_elegida": [
+            "banco",
+            "canco"
+          ],
+          "pareja_rima": true
+        },
+        {
+          "intento": 3,
+          "segundos": 4.1,
+          "versos": [
+            "El móvil, ahora, solo andaba,\n sin batería, qué desgano,\n el fabricante, con gesto franco,\n y lo envió al banco, ¡lo cancó!"
+          ],
+          "ok": false,
+          "reason": "expected 4 lines, got 1",
+          "rima_elegida": [
+            "banco",
+            "canco"
+          ],
+          "pareja_rima": true
+        }
+      ]
+    },
+    {
+      "titular": "Una startup de criptomonedas desaparece con los ahorros de sus clientes",
+      "intentos": [
+        {
+          "intento": 1,
+          "segundos": 3.8,
+          "versos": [
+            "La startup, un sueño digital,"
+          ],
+          "ok": false,
+          "reason": "expected 4 lines, got 1",
+          "rima_elegida": [
+            "miedo",
+            "credo"
+          ],
+          "pareja_rima": true
+        },
+        {
+          "intento": 2,
+          "segundos": 4.3,
+          "versos": [
+            "La startup, un sueño digital, \ncon promesas de gran retorno, \n¡pero el cripto, tan fatal!, \nlo llevó al vacío, al panteón."
+          ],
+          "ok": false,
+          "reason": "expected 4 lines, got 1",
+          "rima_elegida": [
+            "miedo",
+            "credo"
+          ],
+          "pareja_rima": true
+        },
+        {
+          "intento": 3,
+          "segundos": 4.1,
+          "versos": [
+            "La startup, un sueño digital, \ncon promesas de gran retorno, \n¡pero el cripto, tan fatal!, \nlo envió al vacío, al millón."
+          ],
+          "ok": false,
+          "reason": "expected 4 lines, got 1",
+          "rima_elegida": [
+            "miedo",
+            "credo"
+          ],
+          "pareja_rima": true
+        }
+      ]
+    },
+    {
+      "titular": "Una startup de criptomonedas desaparece con los ahorros de sus clientes",
+      "intentos": [
+        {
+          "intento": 1,
+          "segundos": 4.9,
+          "versos": [
+            "La startup, un sueño de futuro audaz,",
+            "Con promesas de cripto, un gran sopio,",
+            "Con inversores ingenuos, sin disfraz,",
+            "Y los ahorros se fueron al panteón, ¡qué opio!"
+          ],
+          "ok": true,
+          "rhyme_2_4": true,
+          "rhyme_1_3": true,
+          "assonant_2_4": true,
+          "tails": [
+            "az",
+            "opio",
+            "az",
+            "opio"
+          ],
+          "meter": [
+            12,
+            10,
+            12,
+            14
+          ],
+          "octosyllabic": 0,
+          "rima_elegida": [
+            "opio",
+            "sopio"
+          ],
+          "pareja_rima": true
+        }
+      ]
+    }
+  ]
+}

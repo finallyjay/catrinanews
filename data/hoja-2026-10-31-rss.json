@@ -1,0 +1,216 @@
+{
+  "fecha": "2026-10-31",
+  "modelo": "gemma3:12b",
+  "calaveras": [
+    {
+      "titular": "La moda de los dispositivos sin pantalla y por qué cada vez hay más",
+      "fuente": "elpais",
+      "url": "https://elpais.com/tecnologia/2026-10-28/la-moda-de-los-dispositivos-sin-pantalla-y-por-que-cada-vez-hay-mas.html",
+      "tema": "modas, dispositivos",
+      "categoria": "comercio y consumo",
+      "motivo": "La moda es un ciclo efímero y ridículo.",
+      "versos": [
+        "Vendía el futuro en cristal,",
+        "promesa de conexión total,",
+        "mas la Muerte, con su ritual,",
+        "lo envió a un eterno digital."
+      ],
+      "english": [
+        "He used to sell the future in crystal,",
+        "a promise of total connection,",
+        "but Death, with her ritual,",
+        "sent him to an eternal digital."
+      ],
+      "check": {
+        "ok": true,
+        "rhyme_2_4": true,
+        "rhyme_1_3": true,
+        "assonant_2_4": true,
+        "tails": [
+          "al",
+          "al",
+          "al",
+          "al"
+        ],
+        "meter": [
+          9,
+          10,
+          9,
+          9
+        ],
+        "octosyllabic": 3
+      },
+      "segundos": 73.8,
+      "audio": "audio/calavera-01.mp3",
+      "titular_en": "The Trend of Screenless Devices and Why It's Growing"
+    },
+    {
+      "titular": "El iPhone Duo, el primer plegable de Apple, recibe quejas de clientes por roturas de pantallas",
+      "fuente": "elpais",
+      "url": "https://elpais.com/tecnologia/2026-10-26/el-iphone-duo-el-primer-plegable-de-apple-recibe-quejas-de-clientes-por-roturas-de-pantallas.html",
+      "tema": "iPhone, precios",
+      "categoria": "móviles y hardware",
+      "motivo": "La ostentación tecnológica y sus fallos.",
+      "versos": [
+        "El iPhone Duo, lujo voraz,",
+        "Con su precio, ¡un golpe crucial,",
+        "La pantalla, ¡qué fugaz!",
+        "Y a la cartera, ¡un descalabro final!"
+      ],
+      "english": [
+        "The iPhone Duo, a voracious luxury,",
+        "With its price, a crucial blow,",
+        "The screen, so fleeting!",
+        "And to the wallet, a final setback!"
+      ],
+      "check": {
+        "ok": true,
+        "rhyme_2_4": true,
+        "rhyme_1_3": true,
+        "assonant_2_4": true,
+        "tails": [
+          "az",
+          "al",
+          "az",
+          "al"
+        ],
+        "meter": [
+          10,
+          9,
+          8,
+          12
+        ],
+        "octosyllabic": 2
+      },
+      "segundos": 109.3,
+      "audio": "audio/calavera-02.mp3",
+      "titular_en": "Customers Report Screen Breakage on iPhone Duo, Apple's First Foldable"
+    },
+    {
+      "titular": "El año negro de Meta: las claves de la mayor multa a una tecnológica por cometer 43 millones de infracciones",
+      "fuente": "elpais",
+      "url": "https://elpais.com/tecnologia/2026-10-23/el-ano-negro-de-meta-las-claves-de-la-mayor-multa-a-una-tecnologica-por-cometer-43-millones-de-infracciones.html",
+      "tema": "Meta, multas",
+      "categoria": "regulación y multas",
+      "motivo": "La impunidad de los gigantes tecnológicos.",
+      "versos": [
+        "Meta creyó dominar,",
+        "su imperio, un caudal real,",
+        "llegó la Flaca a asestar,",
+        "y lo envió al final, fatal."
+      ],
+      "english": [
+        "Meta thought he could dominate,",
+        "his empire, a royal flow,",
+        "La Flaca arrived to deliver a blow,",
+        "and sent him to the final, fatal end."
+      ],
+      "check": {
+        "ok": true,
+        "rhyme_2_4": true,
+        "rhyme_1_3": true,
+        "assonant_2_4": true,
+        "tails": [
+          "ar",
+          "al",
+          "ar",
+          "al"
+        ],
+        "meter": [
+          8,
+          8,
+          8,
+          8
+        ],
+        "octosyllabic": 4
+      },
+      "segundos": 112.9,
+      "audio": "audio/calavera-03.mp3",
+      "titular_en": "Meta's Terrible Year: The Key Details of the Biggest Fine Ever for a Tech Company Due to 43 Million Violations"
+    },
+    {
+      "titular": "Millones de ciberataques en pocas horas, tras descubrir la IA un fallo en el corazón del 70% de las webs",
+      "fuente": "elpais",
+      "url": "https://elpais.com/tecnologia/2026-10-22/millones-de-intentos-de-ataque-en-pocas-horas-tras-destaparse-fallos-graves-en-miles-de-webs.html",
+      "tema": "IA, ciberataques",
+      "categoria": "ciberseguridad",
+      "motivo": "La IA como arma de doble filo.",
+      "versos": [
+        "La web crecía sin precaución,",
+        "un fallo oculto, sin razón.",
+        "La IA lo encontró, ¡qué desazón!,",
+        "y el sistema cayó, sin perdón."
+      ],
+      "english": [
+        "The web grew without caution,",
+        "A hidden flaw, without reason.",
+        "The AI found it, what dismay!",
+        "And the system fell, without forgiveness."
+      ],
+      "check": {
+        "ok": true,
+        "rhyme_2_4": true,
+        "rhyme_1_3": true,
+        "assonant_2_4": true,
+        "tails": [
+          "on",
+          "on",
+          "on",
+          "on"
+        ],
+        "meter": [
+          10,
+          9,
+          9,
+          10
+        ],
+        "octosyllabic": 2
+      },
+      "segundos": 115.5,
+      "audio": "audio/calavera-04.mp3",
+      "titular_en": "Millions of Cyberattacks in a Few Hours After AI Discovered a Flaw in the Heart of 70% of Websites"
+    },
+    {
+      "titular": "La caída de las tecnológicas se acelera por las incertidumbres de su gasto en inteligencia artificial",
+      "fuente": "La Voz de Galicia",
+      "url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxQazg3cVl4UjFQTGhZdW1sbHZ1Mkl0ZGl4SFp3UDBKX3NMQzk1NjlZRGRzaVUwTEhyYmZhc0IyUGllR1p2VWdRQm9NNUR3LThkS0NqNmN1Qm5Rb2NuVFFyUEEzRDhUR0pobjFscW5Yc2l3NGVjazd4UmhNUWZHcld5WnNvZ3M5RjdSZ29XTHhTeUk2QVlOVUNQRHdXWnRPYU9IVWpIUTdrYmRCclJXVjRXVVo4TmdnNW1NZ1M5UVI3ZlppVVZoQjQzekNJUzl0MXlJUmZnR2kxZW5vaTVvelZqaTEydURyZkJwUGfSAYYCQVVfeXFMT3hUb1lvU19TQ3ZoOVk5Und2ZmlobEotTDdoTWZMeUMyU1l0eVB0ZURoaWJ1WFpiLWZyTklPU3U4a21XQ1FLS0t1a3dabzBhWm5qdXl3bEYwbUpESUlsUU0tMzhCWjBJZG5QbUpDWk5DTGhxNHZtNDBNN2l3VVhPeUFOcmFOT2dOWWZ2OVRMdDZ2MU40NmVOSzJYOGNlcXZQLXYzUzVBbUREcm9WSUJOeTJ2NGkwYkFVZ2NtSEdKWTFUZm5HaFhYVjBQMUJWQm1ubXpyRnI4anhWV2g3cVZCSlUxNHhqVzdwS0hkVlhkYmV4bGdfV0ZCeE9lWTVWVzNwUGt0RXJPZw?oc=5",
+      "tema": "tecnológicas, incertidumbre",
+      "categoria": "cripto y finanzas",
+      "motivo": "La burbuja tecnológica a punto de estallar.",
+      "versos": [
+        "La nube, promesa audaz,",
+        "se hunde en un oscuro plan,",
+        "El dato, un valor fatal,",
+        "se esfuma, ¡qué desengaño, van!"
+      ],
+      "english": [
+        "The cloud, a bold promise,",
+        "sinks into a dark scheme,",
+        "The data, a fatal value,",
+        "vanishes, what a disappointment, fleeting!"
+      ],
+      "check": {
+        "ok": true,
+        "rhyme_2_4": true,
+        "rhyme_1_3": false,
+        "assonant_2_4": true,
+        "tails": [
+          "az",
+          "an",
+          "al",
+          "an"
+        ],
+        "meter": [
+          8,
+          8,
+          8,
+          10
+        ],
+        "octosyllabic": 3
+      },
+      "segundos": 91.8,
+      "audio": "audio/calavera-05.mp3",
+      "titular_en": "Tech Stocks Fall Further Amid AI Spending Concerns"
+    }
+  ]
+}

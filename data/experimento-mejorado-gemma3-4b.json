@@ -1,0 +1,1272 @@
+[
+  {
+    "titular": "Una gran tecnológica despide a 10.000 empleados y anuncia beneficios récord",
+    "best": {
+      "versos": [
+        "La empresa, con vano afán,",
+        "Prometió un gran millón,",
+        "La Flaca, con gesto glacial,",
+        "Despidió a diez mil son."
+      ],
+      "res": {
+        "ok": true,
+        "rhyme_2_4": true,
+        "rhyme_1_3": false,
+        "assonant_2_4": true,
+        "tails": [
+          "an",
+          "on",
+          "al",
+          "on"
+        ],
+        "meter": [
+          8,
+          7,
+          9,
+          7
+        ],
+        "octosyllabic": 4
+      },
+      "score": 120,
+      "calls": 1,
+      "seconds": 3.8
+    },
+    "calls": 5,
+    "seconds": 17.8,
+    "candidates": [
+      {
+        "versos": [
+          "La firma, cual falsa ilusión,",
+          "con beneficios sin razón,",
+          "al despedir a diez mil almas,",
+          "les mandó al mercado en un millón."
+        ],
+        "res": {
+          "ok": true,
+          "rhyme_2_4": true,
+          "rhyme_1_3": false,
+          "assonant_2_4": true,
+          "tails": [
+            "on",
+            "on",
+            "almas",
+            "on"
+          ],
+          "meter": [
+            9,
+            9,
+            9,
+            10
+          ],
+          "octosyllabic": 3
+        },
+        "score": 115,
+        "calls": 1,
+        "seconds": 3.1
+      },
+      {
+        "versos": [
+          "La empresa, con vano afán,",
+          "Prometió un gran millón,",
+          "La Flaca, con gesto glacial,",
+          "Despidió a diez mil son."
+        ],
+        "res": {
+          "ok": true,
+          "rhyme_2_4": true,
+          "rhyme_1_3": false,
+          "assonant_2_4": true,
+          "tails": [
+            "an",
+            "on",
+            "al",
+            "on"
+          ],
+          "meter": [
+            8,
+            7,
+            9,
+            7
+          ],
+          "octosyllabic": 4
+        },
+        "score": 120,
+        "calls": 1,
+        "seconds": 3.8
+      },
+      {
+        "versos": [
+          "La empresa, con su falso afán,",
+          "Anunció un lucro sin razón,",
+          "La Catrina llegó, sin más,",
+          "Y a los inversores los mandó al millón."
+        ],
+        "res": {
+          "ok": true,
+          "rhyme_2_4": true,
+          "rhyme_1_3": false,
+          "assonant_2_4": true,
+          "tails": [
+            "an",
+            "on",
+            "as",
+            "on"
+          ],
+          "meter": [
+            9,
+            9,
+            9,
+            12
+          ],
+          "octosyllabic": 3
+        },
+        "score": 115,
+        "calls": 3,
+        "seconds": 10.9
+      }
+    ]
+  },
+  {
+    "titular": "Una gran tecnológica despide a 10.000 empleados y anuncia beneficios récord",
+    "best": {
+      "versos": [
+        "La empresa, de avance sin fin,",
+        "con ganancias de gran millón,",
+        "la Catrina con gesto ruin,",
+        "les quitó el sueldo y su don."
+      ],
+      "res": {
+        "ok": true,
+        "rhyme_2_4": true,
+        "rhyme_1_3": true,
+        "assonant_2_4": true,
+        "tails": [
+          "in",
+          "on",
+          "in",
+          "on"
+        ],
+        "meter": [
+          9,
+          9,
+          9,
+          8
+        ],
+        "octosyllabic": 4
+      },
+      "score": 130,
+      "calls": 1,
+      "seconds": 3.3
+    },
+    "calls": 7,
+    "seconds": 23.0,
+    "candidates": [
+      {
+        "versos": [
+          "Con robots y con capital,",
+          "La empresa hizo su millón,",
+          "La Catrina llegó, fatal,",
+          "Y a la bolsa mandó el millón."
+        ],
+        "res": {
+          "ok": false,
+          "rhyme_2_4": false,
+          "rhyme_1_3": true,
+          "assonant_2_4": false,
+          "tails": [
+            "al",
+            "on",
+            "al",
+            "on"
+          ],
+          "meter": [
+            9,
+            8,
+            9,
+            9
+          ],
+          "octosyllabic": 4
+        },
+        "score": 30,
+        "calls": 3,
+        "seconds": 9.8
+      },
+      {
+        "versos": [
+          "Con diez mil al suelo, fatal,",
+          "La Flaca trajo el plan total,",
+          "De robots y de metal,",
+          "Y al banco lo envió al millón."
+        ],
+        "res": {
+          "ok": false,
+          "rhyme_2_4": false,
+          "rhyme_1_3": true,
+          "assonant_2_4": false,
+          "tails": [
+            "al",
+            "al",
+            "al",
+            "on"
+          ],
+          "meter": [
+            9,
+            9,
+            8,
+            8
+          ],
+          "octosyllabic": 4
+        },
+        "score": 30,
+        "calls": 3,
+        "seconds": 9.9
+      },
+      {
+        "versos": [
+          "La empresa, de avance sin fin,",
+          "con ganancias de gran millón,",
+          "la Catrina con gesto ruin,",
+          "les quitó el sueldo y su don."
+        ],
+        "res": {
+          "ok": true,
+          "rhyme_2_4": true,
+          "rhyme_1_3": true,
+          "assonant_2_4": true,
+          "tails": [
+            "in",
+            "on",
+            "in",
+            "on"
+          ],
+          "meter": [
+            9,
+            9,
+            9,
+            8
+          ],
+          "octosyllabic": 4
+        },
+        "score": 130,
+        "calls": 1,
+        "seconds": 3.3
+      }
+    ]
+  },
+  {
+    "titular": "Una red social cobra ahora por el botón de 'me gusta'",
+    "best": {
+      "versos": [
+        "El rey digital, qué gran error,",
+        "Por 'me gusta' pide ya el don,",
+        "La Flaca, con su cruel don,",
+        "Lo envió al vacío, sin más son.””"
+      ],
+      "res": {
+        "ok": true,
+        "rhyme_2_4": true,
+        "rhyme_1_3": false,
+        "assonant_2_4": true,
+        "tails": [
+          "or",
+          "on",
+          "on",
+          "on"
+        ],
+        "meter": [
+          10,
+          9,
+          8,
+          9
+        ],
+        "octosyllabic": 3
+      },
+      "score": 115,
+      "calls": 3,
+      "seconds": 12.5
+    },
+    "calls": 9,
+    "seconds": 32.5,
+    "candidates": [
+      {
+        "versos": [
+          "El rey digital, qué gran error,",
+          "Por 'me gusta' pide ya el don,",
+          "La Flaca, con su cruel don,",
+          "Lo envió al vacío, sin más son.””"
+        ],
+        "res": {
+          "ok": true,
+          "rhyme_2_4": true,
+          "rhyme_1_3": false,
+          "assonant_2_4": true,
+          "tails": [
+            "or",
+            "on",
+            "on",
+            "on"
+          ],
+          "meter": [
+            10,
+            9,
+            8,
+            9
+          ],
+          "octosyllabic": 3
+        },
+        "score": 115,
+        "calls": 3,
+        "seconds": 12.5
+      },
+      {
+        "versos": [
+          "La app, con su falso pastel,",
+          "prometía fama sin razón,",
+          "ahora el 'me gusta' se vende cruel,",
+          "y al bolsillo del usuario va en millón."
+        ],
+        "res": {
+          "ok": true,
+          "rhyme_2_4": true,
+          "rhyme_1_3": true,
+          "assonant_2_4": true,
+          "tails": [
+            "el",
+            "on",
+            "el",
+            "on"
+          ],
+          "meter": [
+            8,
+            10,
+            11,
+            12
+          ],
+          "octosyllabic": 1
+        },
+        "score": 115,
+        "calls": 3,
+        "seconds": 10.4
+      },
+      {
+        "versos": [
+          "El click es ahora un impuesto,",
+          "con 'me gusta' se paga ya,",
+          "la Huesuda, con desprecio,",
+          "desplaza al botón, sin más."
+        ],
+        "res": {
+          "ok": false,
+          "rhyme_2_4": false,
+          "rhyme_1_3": false,
+          "assonant_2_4": true,
+          "tails": [
+            "esto",
+            "a",
+            "ezio",
+            "as"
+          ],
+          "meter": [
+            9,
+            9,
+            7,
+            8
+          ],
+          "octosyllabic": 4
+        },
+        "score": 20,
+        "calls": 3,
+        "seconds": 9.6
+      }
+    ]
+  },
+  {
+    "titular": "Una red social cobra ahora por el botón de 'me gusta'",
+    "best": {
+      "versos": [
+        "La app, con su antojo cruel,",
+        "Cobró el 'like' con gran pasión,",
+        "La Catrina, con gesto fiel,",
+        "Lo envió al vacío, ¡un millón!"
+      ],
+      "res": {
+        "ok": true,
+        "rhyme_2_4": true,
+        "rhyme_1_3": true,
+        "assonant_2_4": true,
+        "tails": [
+          "el",
+          "on",
+          "el",
+          "on"
+        ],
+        "meter": [
+          7,
+          9,
+          9,
+          8
+        ],
+        "octosyllabic": 4
+      },
+      "score": 130,
+      "calls": 1,
+      "seconds": 3.7
+    },
+    "calls": 5,
+    "seconds": 32.4,
+    "candidates": [
+      {
+        "versos": [
+          "La app, con su antojo cruel,",
+          "Cobró el 'like' con gran pasión,",
+          "La Catrina, con gesto fiel,",
+          "Lo envió al vacío, ¡un millón!"
+        ],
+        "res": {
+          "ok": true,
+          "rhyme_2_4": true,
+          "rhyme_1_3": true,
+          "assonant_2_4": true,
+          "tails": [
+            "el",
+            "on",
+            "el",
+            "on"
+          ],
+          "meter": [
+            7,
+            9,
+            9,
+            8
+          ],
+          "octosyllabic": 4
+        },
+        "score": 130,
+        "calls": 1,
+        "seconds": 3.7
+      },
+      {
+        "versos": [
+          "La red, un vicio sin razón,",
+          "cobrando por cada emoción,",
+          "llegó la Flaca con su don,",
+          "y un millón en la conversión."
+        ],
+        "res": {
+          "ok": true,
+          "rhyme_2_4": true,
+          "rhyme_1_3": true,
+          "assonant_2_4": true,
+          "tails": [
+            "on",
+            "on",
+            "on",
+            "on"
+          ],
+          "meter": [
+            9,
+            9,
+            9,
+            9
+          ],
+          "octosyllabic": 4
+        },
+        "score": 130,
+        "calls": 2,
+        "seconds": 21.9
+      },
+      {
+        "versos": [
+          "La red social, sin más pensar,",
+          "con 'me gusta' un precio fatal,",
+          "la Flaca al banco la llevó,",
+          "a un panteón de capital."
+        ],
+        "res": {
+          "ok": true,
+          "rhyme_2_4": true,
+          "rhyme_1_3": false,
+          "assonant_2_4": true,
+          "tails": [
+            "ar",
+            "al",
+            "o",
+            "al"
+          ],
+          "meter": [
+            9,
+            9,
+            9,
+            9
+          ],
+          "octosyllabic": 4
+        },
+        "score": 120,
+        "calls": 2,
+        "seconds": 6.8
+      }
+    ]
+  },
+  {
+    "titular": "La nueva app de inteligencia artificial promete sustituir a los médicos de cabecera",
+    "best": {
+      "versos": [
+        "La app traía promesas sin fin,",
+        "de lógica y un gran salón,",
+        "con algoritmos, cruel festín,",
+        "y al banco lo mandó a millón."
+      ],
+      "res": {
+        "ok": true,
+        "rhyme_2_4": true,
+        "rhyme_1_3": true,
+        "assonant_2_4": true,
+        "tails": [
+          "in",
+          "on",
+          "in",
+          "on"
+        ],
+        "meter": [
+          10,
+          8,
+          9,
+          9
+        ],
+        "octosyllabic": 3
+      },
+      "score": 125,
+      "calls": 1,
+      "seconds": 3.8
+    },
+    "calls": 7,
+    "seconds": 27.1,
+    "candidates": [
+      {
+        "versos": [
+          "La app del dato, audaz y fatal,",
+          "con algoritmos sin razón,",
+          "la salud en chips, ¡qué gran ideal!",
+          "y al doctor al millón lo llevó al salón."
+        ],
+        "res": {
+          "ok": true,
+          "rhyme_2_4": true,
+          "rhyme_1_3": true,
+          "assonant_2_4": true,
+          "tails": [
+            "al",
+            "on",
+            "al",
+            "on"
+          ],
+          "meter": [
+            9,
+            9,
+            11,
+            12
+          ],
+          "octosyllabic": 2
+        },
+        "score": 120,
+        "calls": 3,
+        "seconds": 12.2
+      },
+      {
+        "versos": [
+          "La app, con su voz artificial,",
+          "prometía un nuevo plan,",
+          "llegó la Catrina, cruel y fatal,",
+          "y lo llevó al infierno, sin van."
+        ],
+        "res": {
+          "ok": true,
+          "rhyme_2_4": true,
+          "rhyme_1_3": true,
+          "assonant_2_4": true,
+          "tails": [
+            "al",
+            "an",
+            "al",
+            "an"
+          ],
+          "meter": [
+            9,
+            8,
+            11,
+            10
+          ],
+          "octosyllabic": 2
+        },
+        "score": 120,
+        "calls": 3,
+        "seconds": 11.1
+      },
+      {
+        "versos": [
+          "La app traía promesas sin fin,",
+          "de lógica y un gran salón,",
+          "con algoritmos, cruel festín,",
+          "y al banco lo mandó a millón."
+        ],
+        "res": {
+          "ok": true,
+          "rhyme_2_4": true,
+          "rhyme_1_3": true,
+          "assonant_2_4": true,
+          "tails": [
+            "in",
+            "on",
+            "in",
+            "on"
+          ],
+          "meter": [
+            10,
+            8,
+            9,
+            9
+          ],
+          "octosyllabic": 3
+        },
+        "score": 125,
+        "calls": 1,
+        "seconds": 3.8
+      }
+    ]
+  },
+  {
+    "titular": "La nueva app de inteligencia artificial promete sustituir a los médicos de cabecera",
+    "best": {
+      "versos": [
+        "La app, con IA, era genial,",
+        "Prometía un diagnóstico veloz,",
+        "Pero el algoritmo fatal,",
+        "Lo envió al millón, ¡qué arroz!"
+      ],
+      "res": {
+        "ok": true,
+        "rhyme_2_4": true,
+        "rhyme_1_3": true,
+        "assonant_2_4": true,
+        "tails": [
+          "al",
+          "oz",
+          "al",
+          "oz"
+        ],
+        "meter": [
+          7,
+          11,
+          9,
+          7
+        ],
+        "octosyllabic": 3
+      },
+      "score": 125,
+      "calls": 1,
+      "seconds": 3.7
+    },
+    "calls": 4,
+    "seconds": 14.4,
+    "candidates": [
+      {
+        "versos": [
+          "La app, con IA, era genial,",
+          "Prometía un diagnóstico veloz,",
+          "Pero el algoritmo fatal,",
+          "Lo envió al millón, ¡qué arroz!"
+        ],
+        "res": {
+          "ok": true,
+          "rhyme_2_4": true,
+          "rhyme_1_3": true,
+          "assonant_2_4": true,
+          "tails": [
+            "al",
+            "oz",
+            "al",
+            "oz"
+          ],
+          "meter": [
+            7,
+            11,
+            9,
+            7
+          ],
+          "octosyllabic": 3
+        },
+        "score": 125,
+        "calls": 1,
+        "seconds": 3.7
+      },
+      {
+        "versos": [
+          "La app, con su falso saber,",
+          "prometía un nuevo don,",
+          "al doctor, sin poder ver,",
+          "lo mandó al millón."
+        ],
+        "res": {
+          "ok": true,
+          "rhyme_2_4": true,
+          "rhyme_1_3": true,
+          "assonant_2_4": true,
+          "tails": [
+            "er",
+            "on",
+            "er",
+            "on"
+          ],
+          "meter": [
+            8,
+            8,
+            8,
+            6
+          ],
+          "octosyllabic": 3
+        },
+        "score": 125,
+        "calls": 1,
+        "seconds": 3.1
+      },
+      {
+        "versos": [
+          "La app del chip, promesa fatal,",
+          "Su venta fue un triste montón,",
+          "Llegó la Catrina, sin igual,",
+          "Y lo envió al vacío, sin don."
+        ],
+        "res": {
+          "ok": true,
+          "rhyme_2_4": true,
+          "rhyme_1_3": true,
+          "assonant_2_4": true,
+          "tails": [
+            "al",
+            "on",
+            "al",
+            "on"
+          ],
+          "meter": [
+            9,
+            9,
+            10,
+            9
+          ],
+          "octosyllabic": 3
+        },
+        "score": 125,
+        "calls": 2,
+        "seconds": 7.6
+      }
+    ]
+  },
+  {
+    "titular": "Un fabricante de móviles deja de incluir el cargador y ahora tampoco la batería",
+    "best": {
+      "versos": [
+        "El móvil, rey de su ilusión,",
+        "Sin batería, qué aflicción,",
+        "El hueso del dato, desolación,",
+        "Al millón, ¡pura extinción!"
+      ],
+      "res": {
+        "ok": true,
+        "rhyme_2_4": true,
+        "rhyme_1_3": true,
+        "assonant_2_4": true,
+        "tails": [
+          "on",
+          "on",
+          "on",
+          "on"
+        ],
+        "meter": [
+          9,
+          9,
+          11,
+          8
+        ],
+        "octosyllabic": 3
+      },
+      "score": 125,
+      "calls": 2,
+      "seconds": 6.9
+    },
+    "calls": 6,
+    "seconds": 22.4,
+    "candidates": [
+      {
+        "versos": [
+          "El móvil, brillo de vanidad,",
+          "sin batería, ¡qué fatal!",
+          "El fabricante, con gran afán,",
+          "lo envió al millón, ¡qué mal!"
+        ],
+        "res": {
+          "ok": true,
+          "rhyme_2_4": true,
+          "rhyme_1_3": false,
+          "assonant_2_4": true,
+          "tails": [
+            "ad",
+            "al",
+            "an",
+            "al"
+          ],
+          "meter": [
+            10,
+            9,
+            10,
+            7
+          ],
+          "octosyllabic": 2
+        },
+        "score": 110,
+        "calls": 3,
+        "seconds": 12.0
+      },
+      {
+        "versos": [
+          "El móvil, fiel, ya no avisa,",
+          "Su carga es un triste error,",
+          "Y el dueño, en pena y crisis,",
+          "Al millón, ¡sin batería y horror!"
+        ],
+        "res": {
+          "ok": true,
+          "rhyme_2_4": true,
+          "rhyme_1_3": false,
+          "assonant_2_4": true,
+          "tails": [
+            "isa",
+            "or",
+            "isis",
+            "or"
+          ],
+          "meter": [
+            8,
+            8,
+            7,
+            10
+          ],
+          "octosyllabic": 3
+        },
+        "score": 115,
+        "calls": 1,
+        "seconds": 3.5
+      },
+      {
+        "versos": [
+          "El móvil, rey de su ilusión,",
+          "Sin batería, qué aflicción,",
+          "El hueso del dato, desolación,",
+          "Al millón, ¡pura extinción!"
+        ],
+        "res": {
+          "ok": true,
+          "rhyme_2_4": true,
+          "rhyme_1_3": true,
+          "assonant_2_4": true,
+          "tails": [
+            "on",
+            "on",
+            "on",
+            "on"
+          ],
+          "meter": [
+            9,
+            9,
+            11,
+            8
+          ],
+          "octosyllabic": 3
+        },
+        "score": 125,
+        "calls": 2,
+        "seconds": 6.9
+      }
+    ]
+  },
+  {
+    "titular": "Un fabricante de móviles deja de incluir el cargador y ahora tampoco la batería",
+    "best": {
+      "versos": [
+        "El móvil, sin batería al final,",
+        "del fabricante, cruel plan,",
+        "al panteón lo mandó sin igual,",
+        "por el extra, ¡qué gran afán!"
+      ],
+      "res": {
+        "ok": true,
+        "rhyme_2_4": true,
+        "rhyme_1_3": true,
+        "assonant_2_4": true,
+        "tails": [
+          "al",
+          "an",
+          "al",
+          "an"
+        ],
+        "meter": [
+          11,
+          8,
+          11,
+          9
+        ],
+        "octosyllabic": 2
+      },
+      "score": 120,
+      "calls": 3,
+      "seconds": 10.7
+    },
+    "calls": 8,
+    "seconds": 43.3,
+    "candidates": [
+      {
+        "versos": [
+          "El móvil, sin batería al final,",
+          "del fabricante, cruel plan,",
+          "al panteón lo mandó sin igual,",
+          "por el extra, ¡qué gran afán!"
+        ],
+        "res": {
+          "ok": true,
+          "rhyme_2_4": true,
+          "rhyme_1_3": true,
+          "assonant_2_4": true,
+          "tails": [
+            "al",
+            "an",
+            "al",
+            "an"
+          ],
+          "meter": [
+            11,
+            8,
+            11,
+            9
+          ],
+          "octosyllabic": 2
+        },
+        "score": 120,
+        "calls": 3,
+        "seconds": 10.7
+      },
+      {
+        "versos": [
+          "El móvil, ya sin batería y sin carga,",
+          "Un error, ¡qué cruel descarga!",
+          "La Catrina, con su sonrisa helada,",
+          "Lo llevó al vacío, pura hucha."
+        ],
+        "res": {
+          "ok": false,
+          "rhyme_2_4": false,
+          "rhyme_1_3": false,
+          "assonant_2_4": false,
+          "tails": [
+            "arga",
+            "arga",
+            "ada",
+            "uka"
+          ],
+          "meter": [
+            12,
+            8,
+            11,
+            9
+          ],
+          "octosyllabic": 2
+        },
+        "score": 10,
+        "calls": 3,
+        "seconds": 25.6
+      },
+      {
+        "versos": [
+          "El móvil, con su hueco designio,",
+          "Ya no da carga, ¡qué le don!",
+          "Llegó la Flaca, sin perdón,",
+          "Al vacío lo envió, sin millón."
+        ],
+        "res": {
+          "ok": true,
+          "rhyme_2_4": true,
+          "rhyme_1_3": false,
+          "assonant_2_4": true,
+          "tails": [
+            "ignio",
+            "on",
+            "on",
+            "on"
+          ],
+          "meter": [
+            9,
+            9,
+            9,
+            10
+          ],
+          "octosyllabic": 3
+        },
+        "score": 115,
+        "calls": 2,
+        "seconds": 7.0
+      }
+    ]
+  },
+  {
+    "titular": "Una startup de criptomonedas desaparece con los ahorros de sus clientes",
+    "best": {
+      "versos": [
+        "La app prometía el gran millón,",
+        "De futuro, un brillo sin razón,",
+        "La Huesuda llegó, con su cruel visión,",
+        "Y al bolsillo lo llevó al desolación."
+      ],
+      "res": {
+        "ok": true,
+        "rhyme_2_4": true,
+        "rhyme_1_3": true,
+        "assonant_2_4": true,
+        "tails": [
+          "on",
+          "on",
+          "on",
+          "on"
+        ],
+        "meter": [
+          9,
+          10,
+          11,
+          12
+        ],
+        "octosyllabic": 1
+      },
+      "score": 115,
+      "calls": 3,
+      "seconds": 11.0
+    },
+    "calls": 7,
+    "seconds": 44.7,
+    "candidates": [
+      {
+        "versos": [
+          "La cripto audaz, sueño fugaz,",
+          "Con ahorros grandes, un desdén,",
+          "La Catrina llegó, sin disfraz,",
+          "Y al vacío, todo lo fue a ver."
+        ],
+        "res": {
+          "ok": false,
+          "rhyme_2_4": false,
+          "rhyme_1_3": true,
+          "assonant_2_4": true,
+          "tails": [
+            "az",
+            "en",
+            "az",
+            "er"
+          ],
+          "meter": [
+            9,
+            10,
+            10,
+            10
+          ],
+          "octosyllabic": 1
+        },
+        "score": 15,
+        "calls": 3,
+        "seconds": 30.5
+      },
+      {
+        "versos": [
+          "La app prometía el gran millón,",
+          "De futuro, un brillo sin razón,",
+          "La Huesuda llegó, con su cruel visión,",
+          "Y al bolsillo lo llevó al desolación."
+        ],
+        "res": {
+          "ok": true,
+          "rhyme_2_4": true,
+          "rhyme_1_3": true,
+          "assonant_2_4": true,
+          "tails": [
+            "on",
+            "on",
+            "on",
+            "on"
+          ],
+          "meter": [
+            9,
+            10,
+            11,
+            12
+          ],
+          "octosyllabic": 1
+        },
+        "score": 115,
+        "calls": 3,
+        "seconds": 11.0
+      },
+      {
+        "versos": [
+          "La cripto audaz, un gran empeño,",
+          "con promesas de un millón,",
+          "la Flaca llegó, sin perdón,",
+          "y el dinero se perdió en el salón."
+        ],
+        "res": {
+          "ok": true,
+          "rhyme_2_4": true,
+          "rhyme_1_3": false,
+          "assonant_2_4": true,
+          "tails": [
+            "eño",
+            "on",
+            "on",
+            "on"
+          ],
+          "meter": [
+            9,
+            8,
+            9,
+            11
+          ],
+          "octosyllabic": 3
+        },
+        "score": 115,
+        "calls": 1,
+        "seconds": 3.2
+      }
+    ]
+  },
+  {
+    "titular": "Una startup de criptomonedas desaparece con los ahorros de sus clientes",
+    "best": {
+      "versos": [
+        "La app prometía un millón,",
+        "con ganancias sin don,",
+        "La Catrina, con fría acción,",
+        "¡los ahorros hundió, qué desazón!"
+      ],
+      "res": {
+        "ok": true,
+        "rhyme_2_4": true,
+        "rhyme_1_3": true,
+        "assonant_2_4": true,
+        "tails": [
+          "on",
+          "on",
+          "on",
+          "on"
+        ],
+        "meter": [
+          8,
+          7,
+          9,
+          11
+        ],
+        "octosyllabic": 3
+      },
+      "score": 125,
+      "calls": 2,
+      "seconds": 6.3
+    },
+    "calls": 8,
+    "seconds": 29.1,
+    "candidates": [
+      {
+        "versos": [
+          "La cripto, promesa de gran salón,",
+          "Con mil millones que creían sin razón,",
+          "Llegó la Catrina, con fría decisión,",
+          "Y los ahorros, al vacío, en desolación."
+        ],
+        "res": {
+          "ok": true,
+          "rhyme_2_4": true,
+          "rhyme_1_3": true,
+          "assonant_2_4": true,
+          "tails": [
+            "on",
+            "on",
+            "on",
+            "on"
+          ],
+          "meter": [
+            11,
+            13,
+            13,
+            14
+          ],
+          "octosyllabic": 0
+        },
+        "score": 110,
+        "calls": 3,
+        "seconds": 11.8
+      },
+      {
+        "versos": [
+          "Con cripto sueños, falso metal,",
+          "La Flaca robó, sin control,",
+          "Y el valor, ya no se atestigua,",
+          "Desapareció el capital."
+        ],
+        "res": {
+          "ok": false,
+          "rhyme_2_4": false,
+          "rhyme_1_3": false,
+          "assonant_2_4": false,
+          "tails": [
+            "al",
+            "ol",
+            "igua",
+            "al"
+          ],
+          "meter": [
+            10,
+            9,
+            9,
+            9
+          ],
+          "octosyllabic": 3
+        },
+        "score": 15,
+        "calls": 3,
+        "seconds": 11.0
+      },
+      {
+        "versos": [
+          "La app prometía un millón,",
+          "con ganancias sin don,",
+          "La Catrina, con fría acción,",
+          "¡los ahorros hundió, qué desazón!"
+        ],
+        "res": {
+          "ok": true,
+          "rhyme_2_4": true,
+          "rhyme_1_3": true,
+          "assonant_2_4": true,
+          "tails": [
+            "on",
+            "on",
+            "on",
+            "on"
+          ],
+          "meter": [
+            8,
+            7,
+            9,
+            11
+          ],
+          "octosyllabic": 3
+        },
+        "score": 125,
+        "calls": 2,
+        "seconds": 6.3
+      }
+    ]
+  }
+]

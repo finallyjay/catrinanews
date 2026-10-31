@@ -10,3 +10,4 @@ docs/avatar/*.jpg
 docs/avatar/*.mp3
 docs/avatar/catrina-habla.html
 docs/post-draft.md
+!data/*.json
