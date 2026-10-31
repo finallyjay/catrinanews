@@ -71,7 +71,9 @@ SCHEMA_PAREJA = {
 }
 
 
-def ollama_chat(messages: list[dict], schema: dict, max_tokens: int = 300, temperature: float = 0.9) -> dict:
+def ollama_chat(
+    messages: list[dict], schema: dict, max_tokens: int = 300, temperature: float = 0.9, timeout: int = 180
+) -> dict:
     body = json.dumps({
         "model": MODEL,
         "messages": messages,
@@ -84,10 +86,10 @@ def ollama_chat(messages: list[dict], schema: dict, max_tokens: int = 300, tempe
     )
     for wait in (2, 5, None):  # Ollama returns an occasional transient 500
         try:
-            with urllib.request.urlopen(req, timeout=180) as resp:
+            with urllib.request.urlopen(req, timeout=timeout) as resp:
                 content = json.load(resp)["message"]["content"]
             return json.loads(content)
-        except urllib.error.URLError:
+        except (urllib.error.URLError, TimeoutError):
             if wait is None:
                 raise
             time.sleep(wait)

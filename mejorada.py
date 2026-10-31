@@ -17,6 +17,7 @@ Usage:
 
 import argparse
 import json
+import re
 import urllib.error
 import time
 
@@ -26,6 +27,20 @@ from rima import _words, check_stanza, rhyme_tail
 
 MAX_TRIES = 3
 BANNED_ENDINGS = {"panteón", "panteon"}
+
+# Satire of companies must never turn into a joke about a people. The model once wrote
+# "y al chino lo llevó al montón" about a headline on espionage; code now rejects any
+# stanza that names a nationality or ethnicity, whatever the model thinks of it.
+ETNIAS = re.compile(
+    r"\b(chin[oa]s?|japones[ae]?s?|corean[oa]s?|norcorean[oa]s?|rus[oa]s?|árabes?|judí[oa]s?|"
+    r"musulman[ae]s?|gitan[oa]s?|inmigrantes?|negr[oa]s?|mor[oa]s?|indi[oa]s?|indonesi[oa]s?|"
+    r"africanos?|latin[oa]s?|asiátic[oa]s?|gringos?|yanquis?)\b",
+    re.IGNORECASE,
+)
+
+
+def ethnic_lines(versos: list[str]) -> list[int]:
+    return [i + 1 for i, v in enumerate(versos) if ETNIAS.search(v)]
 
 SISTEMA_MEJORADO = SISTEMA + """
 - Prohibido terminar un verso en "panteón": es la rima fácil, busca otra.
@@ -67,11 +82,15 @@ def score(res: dict, versos: list[str], evitar: frozenset = frozenset()) -> int:
         + (10 if res["rhyme_1_3"] else 0)
         + 5 * res["octosyllabic"]
         - 30 * len(banned_lines(versos, evitar))
+        - 300 * len(ethnic_lines(versos))
     )
 
 
 def good_enough(res: dict, versos: list[str], evitar: frozenset = frozenset()) -> bool:
-    return res.get("ok", False) and res["octosyllabic"] >= 3 and not banned_lines(versos, evitar)
+    return (
+        res.get("ok", False) and res["octosyllabic"] >= 3
+        and not banned_lines(versos, evitar) and not ethnic_lines(versos)
+    )
 
 
 def feedback(versos: list[str], res: dict, evitar: frozenset = frozenset()) -> str:
@@ -89,6 +108,8 @@ def feedback(versos: list[str], res: dict, evitar: frozenset = frozenset()) -> s
             issues.append(f"El verso {n} termina en \"{word}\", que está prohibido.")
         else:
             issues.append(f"El verso {n} termina en \"{word}\" (rima en \"-{tail}\"), una rima ya usada en la hoja.")
+    for n in ethnic_lines(versos):
+        issues.append(f"El verso {n} menciona una nacionalidad o etnia: prohibido. La burla es para la empresa, nunca para un pueblo.")
     for i, m in enumerate(res["meter"]):
         if not 7 <= m <= 9:
             issues.append(f"El verso {i + 1} tiene {m} sílabas; déjalo en unas 8.")

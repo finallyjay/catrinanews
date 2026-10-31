@@ -12,7 +12,7 @@ Las calaveras literarias nacieron en la prensa satírica mexicana del siglo XIX 
 
 ## Cómo funciona
 
-1. **Titulares** de RSS gratuitos (El País Tecnología, Google News).
+1. **Titulares** del motor de Google News de [SerpApi](https://serpapi.com) (España, últimas 24 horas, con el medio y el enlace real) junto al RSS de El País Tecnología. También funciona solo con RSS gratuitos, sin clave.
 2. **El editor:** Gemma elige los titulares satirizables y les pone una categoría de una lista cerrada; el código deja uno por categoría y descarta cualquier titular sobre violencia, muertes o abusos, aunque el modelo lo elija.
 3. **El poeta:** Gemma escribe la calavera y **[`rima.py`](rima.py), en Python puro, comprueba la rima consonante y cuenta las sílabas métricas** (tónica, diptongos, sinalefa). Si algo falla, le dice al modelo exactamente qué corregir.
 4. **La traducción:** la rima no sobrevive a la traducción, así que el español es el original y el inglés es una traducción verso a verso.

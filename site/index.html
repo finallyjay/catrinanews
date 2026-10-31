@@ -7,6 +7,9 @@
 <meta name="description" content="Calaveras literarias de las noticias tecnológicas del día, escritas por un modelo abierto en local y recitadas por la Catrina.">
 <meta property="og:title" content="Catrina News · 31 de octubre de 2026">
 <meta property="og:description" content="Today's tech news as Día de los Muertos calaveras: written by a local open model, rhyme checked in code, read aloud by the Catrina.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta property="og:image" content="https://catrinanews.tech/media/og.png">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Rye&display=swap" rel="stylesheet">
 <style>
@@ -53,6 +56,18 @@ html[data-lang="en"] .en { font-size:.95rem; color:var(--ink); }
 .escuchar { margin-top:12px; font-family:"Rye", serif; font-size:1rem; background:var(--ink); color:var(--paper);
   border:none; padding:8px 18px; cursor:pointer; letter-spacing:.04em; }
 .escuchar:hover { background:var(--red); }
+.escuchar.secundario { background:none; color:var(--ink); border:2px solid var(--ink); }
+.escuchar.secundario:hover { background:var(--ink); color:var(--paper); }
+.presenta { display:flex; align-items:center; justify-content:center; gap:22px; margin:14px auto 6px; }
+.presenta .acciones { display:flex; flex-direction:column; gap:10px; align-items:stretch; }
+.presenta .acciones .escuchar { margin-top:0; }
+.intro { margin:0; width:220px; padding:5px; border:3px double var(--ink); background:#e9dcbd; }
+.intro video { display:block; width:100%; aspect-ratio:1; background:#1b1611; }
+.intro video::cue { font-family:Georgia, serif; font-size:.68rem; line-height:1.25; }
+@media (max-width:700px) {
+  .presenta { flex-direction:column; gap:12px; }
+  .intro { width:min(78vw, 300px); }
+}
 article { transition:background .4s; }
 article.activa { background:#f7efd9; box-shadow:inset 4px 0 0 var(--red); }
 .catrina-flotante { position:fixed; right:22px; bottom:22px; width:96px; padding:10px 10px 4px;
@@ -60,6 +75,10 @@ article.activa { background:#f7efd9; box-shadow:inset 4px 0 0 var(--red); }
   opacity:0; transform:translateY(20px); transition:opacity .3s, transform .3s; pointer-events:none; }
 .catrina-flotante .skull { width:100%; margin:0; }
 body.recitando .catrina-flotante { opacity:1; transform:none; }
+.creditos { font-style:normal; font-size:.78rem; letter-spacing:.06em; text-transform:uppercase; margin:12px 0 0;
+  padding-top:10px; border-top:1px solid var(--ink); }
+.creditos a { color:inherit; text-decoration:none; border-bottom:1px dotted var(--muted); }
+.creditos a:hover { color:var(--red); }
 footer { text-align:center; font-size:.85rem; padding-top:14px; font-style:italic; }
 footer strong { font-style:normal; }
 @media (max-width:700px) {
@@ -114,59 +133,50 @@ footer strong { font-style:normal; }
 </svg>
     <h1>Catrina <em>News</em></h1>
     <p class="lema">¡Gran Calavera Tecnológica!</p>
-    <button type="button" class="escuchar" onclick="escucharHoja()">▶ <span class="i18n" lang="es">Escuchar la hoja</span><span class="i18n" lang="en">Listen to the broadside</span></button>
+    <div class="presenta">
+      <figure class="intro"><video id="catrina-video" controls preload="none" playsinline poster="media/catrina-intro.jpg" src="media/catrina-intro.mp4"><track kind="subtitles" srclang="en" label="English" src="media/catrina-intro.en.vtt"><track kind="subtitles" srclang="es" label="Español" src="media/catrina-intro.es.vtt"></video></figure>
+      <div class="acciones">
+        <button type="button" class="escuchar secundario" onclick="conocerCatrina()">▶ <span class="i18n" lang="es">Conoce a La Catrina</span><span class="i18n" lang="en">Meet La Catrina</span> · 22 s</button>
+        <button type="button" class="escuchar" onclick="escucharHoja()">▶ <span class="i18n" lang="es">Escuchar la hoja</span><span class="i18n" lang="en">Listen to the broadside</span></button>
+      </div>
+    </div>
     <p class="sub"><span class="i18n" lang="es">Donde la Flaca visita a las empresas que salieron hoy en las noticias, como hacía la prensa satírica del siglo XIX con los poderosos.</span><span class="i18n" lang="en">Where Death pays a visit to the tech companies in today's news, the way Mexico's 19th-century satirical press mocked the powerful.</span></p>
   </header>
   <section class="grid">
 <article>
-  <p class="kicker"><span class="i18n" lang="es">Según El País</span><span class="i18n" lang="en">From El País</span></p>
-  <p class="titular"><a href="https://elpais.com/tecnologia/2026-10-28/la-moda-de-los-dispositivos-sin-pantalla-y-por-que-cada-vez-hay-mas.html" rel="noopener"><span class="i18n" lang="es">La moda de los dispositivos sin pantalla y por qué cada vez hay más</span><span class="i18n" lang="en">The Trend of Screenless Devices and Why It&#x27;s Growing</span></a></p>
-  <p class="versos" lang="es"><span>Vendía el futuro en cristal,</span><span>promesa de conexión total,</span><span>mas la Muerte, con su ritual,</span><span>lo envió a un eterno digital.</span></p>
-  <p class="en" lang="en"><span>He used to sell the future in crystal,</span><span>a promise of total connection,</span><span>but Death, with her ritual,</span><span>sent him to an eternal digital.</span></p>
+  <p class="kicker"><span class="i18n" lang="es">Según BandaAncha</span><span class="i18n" lang="en">From BandaAncha</span></p>
+  <p class="titular"><a href="https://bandaancha.eu/articulos/francia-aprueba-tasa-gigabyte-0-05-gb-11973" rel="noopener"><span class="i18n" lang="es">Francia aprueba la &quot;tasa al gigabyte&quot;: 0,05€ por GB consumido de Netflix, YouTube y otras plataformas</span><span class="i18n" lang="en">France Approves &#x27;Per-Gigabyte Tax&#x27;: €0.05 Per GB Consumed on Netflix, YouTube, and Other Platforms</span></a></p>
+  <p class="versos" lang="es"><span>El stream, antes, era festín,</span><span>ahora el consumo es ladrón.</span><span>Cinco céntimos, ¡qué confín!</span><span>Netflix ahora es un baldón.</span></p>
+  <p class="en" lang="en"><span>The stream, before, was a feast,</span><span>now consumption is a thief.</span><span>Five cents, what a boundary!</span><span>Netflix is now a drain.</span></p>
   <audio controls preload="none" src="audio/calavera-01.mp3"></audio>
-  <p class="check"><span class="i18n" lang="es">rima</span><span class="i18n" lang="en">rhyme</span> 2-4 <b>✓</b> · 1-3 <b>✓</b> · <span class="i18n" lang="es">sílabas</span><span class="i18n" lang="en">syllables</span> 9-10-9-9</p>
+  <p class="check"><span class="i18n" lang="es">rima</span><span class="i18n" lang="en">rhyme</span> 2-4 <b>✓</b> · 1-3 <b>✓</b> · <span class="i18n" lang="es">sílabas</span><span class="i18n" lang="en">syllables</span> 10-9-9-9</p>
 </article>
 <article>
-  <p class="kicker"><span class="i18n" lang="es">Según El País</span><span class="i18n" lang="en">From El País</span></p>
-  <p class="titular"><a href="https://elpais.com/tecnologia/2026-10-26/el-iphone-duo-el-primer-plegable-de-apple-recibe-quejas-de-clientes-por-roturas-de-pantallas.html" rel="noopener"><span class="i18n" lang="es">El iPhone Duo, el primer plegable de Apple, recibe quejas de clientes por roturas de pantallas</span><span class="i18n" lang="en">Customers Report Screen Breakage on iPhone Duo, Apple&#x27;s First Foldable</span></a></p>
-  <p class="versos" lang="es"><span>El iPhone Duo, lujo voraz,</span><span>Con su precio, ¡un golpe crucial,</span><span>La pantalla, ¡qué fugaz!</span><span>Y a la cartera, ¡un descalabro final!</span></p>
-  <p class="en" lang="en"><span>The iPhone Duo, a voracious luxury,</span><span>With its price, a crucial blow,</span><span>The screen, so fleeting!</span><span>And to the wallet, a final setback!</span></p>
+  <p class="kicker"><span class="i18n" lang="es">Según MARCA</span><span class="i18n" lang="en">From MARCA</span></p>
+  <p class="titular"><a href="https://www.marca.com/coches-y-motos/coches/electricos/2026/10/31/tesla-celebra-halloween-dos-pasajeros-ultratumba-coche-conductor.html" rel="noopener"><span class="i18n" lang="es">Tesla celebra Halloween con dos pasajeros de ultratumba en un coche sin conductor</span><span class="i18n" lang="en">Tesla Celebrates Halloween with Two Ghosts in a Driverless Car</span></a></p>
+  <p class="versos" lang="es"><span>Tesla anuncia un festín,</span><span>con almas que piden un son,</span><span>el coche va sin control,</span><span>y al más allá, ¡a presión!</span></p>
+  <p class="en" lang="en"><span>Tesla announces a feast,</span><span>with souls that are asking for a song,</span><span>the car goes without control,</span><span>and to the afterlife, under pressure!</span></p>
   <audio controls preload="none" src="audio/calavera-02.mp3"></audio>
-  <p class="check"><span class="i18n" lang="es">rima</span><span class="i18n" lang="en">rhyme</span> 2-4 <b>✓</b> · 1-3 <b>✓</b> · <span class="i18n" lang="es">sílabas</span><span class="i18n" lang="en">syllables</span> 10-9-8-12</p>
+  <p class="check"><span class="i18n" lang="es">rima</span><span class="i18n" lang="en">rhyme</span> 2-4 <b>✓</b> · <span class="i18n" lang="es">sílabas</span><span class="i18n" lang="en">syllables</span> 7-9-8-7</p>
 </article>
 <article>
-  <p class="kicker"><span class="i18n" lang="es">Según El País</span><span class="i18n" lang="en">From El País</span></p>
-  <p class="titular"><a href="https://elpais.com/tecnologia/2026-10-23/el-ano-negro-de-meta-las-claves-de-la-mayor-multa-a-una-tecnologica-por-cometer-43-millones-de-infracciones.html" rel="noopener"><span class="i18n" lang="es">El año negro de Meta: las claves de la mayor multa a una tecnológica por cometer 43 millones de infracciones</span><span class="i18n" lang="en">Meta&#x27;s Terrible Year: The Key Details of the Biggest Fine Ever for a Tech Company Due to 43 Million Violations</span></a></p>
-  <p class="versos" lang="es"><span>Meta creyó dominar,</span><span>su imperio, un caudal real,</span><span>llegó la Flaca a asestar,</span><span>y lo envió al final, fatal.</span></p>
-  <p class="en" lang="en"><span>Meta thought he could dominate,</span><span>his empire, a royal flow,</span><span>La Flaca arrived to deliver a blow,</span><span>and sent him to the final, fatal end.</span></p>
+  <p class="kicker"><span class="i18n" lang="es">Según La Razón</span><span class="i18n" lang="en">From La Razón</span></p>
+  <p class="titular"><a href="https://www.larazon.es/compras/este-movil-samsung-gama-media-pantalla-67-pulgadas-8-ram-esta-90-euros-mas-barato_202610316ae33a74004b78127ab88c9c.html" rel="noopener"><span class="i18n" lang="es">Este móvil Samsung de gama media con pantalla de 6,7 pulgadas y 8 GB de RAM está 90 euros más barato</span><span class="i18n" lang="en">This mid-range Samsung phone with a 6.7-inch screen and 8 GB of RAM is €90 cheaper</span></a></p>
+  <p class="versos" lang="es"><span>Samsung anunciaba su móvil,</span><span>con precio irrisorio, ¡qué afán!</span><span>La Flaca le quitó el color,</span><span>y al bolsillo lo llevó, ¡sin plan!</span></p>
+  <p class="en" lang="en"><span>Samsung was advertising its phone,</span><span>with a ridiculously low price, what eagerness!</span><span>La Flaca stole its color,</span><span>and took it to pockets, without a plan!</span></p>
   <audio controls preload="none" src="audio/calavera-03.mp3"></audio>
-  <p class="check"><span class="i18n" lang="es">rima</span><span class="i18n" lang="en">rhyme</span> 2-4 <b>✓</b> · 1-3 <b>✓</b> · <span class="i18n" lang="es">sílabas</span><span class="i18n" lang="en">syllables</span> 8-8-8-8</p>
-</article>
-<article>
-  <p class="kicker"><span class="i18n" lang="es">Según El País</span><span class="i18n" lang="en">From El País</span></p>
-  <p class="titular"><a href="https://elpais.com/tecnologia/2026-10-22/millones-de-intentos-de-ataque-en-pocas-horas-tras-destaparse-fallos-graves-en-miles-de-webs.html" rel="noopener"><span class="i18n" lang="es">Millones de ciberataques en pocas horas, tras descubrir la IA un fallo en el corazón del 70% de las webs</span><span class="i18n" lang="en">Millions of Cyberattacks in a Few Hours After AI Discovered a Flaw in the Heart of 70% of Websites</span></a></p>
-  <p class="versos" lang="es"><span>La web crecía sin precaución,</span><span>un fallo oculto, sin razón.</span><span>La IA lo encontró, ¡qué desazón!,</span><span>y el sistema cayó, sin perdón.</span></p>
-  <p class="en" lang="en"><span>The web grew without caution,</span><span>A hidden flaw, without reason.</span><span>The AI found it, what dismay!</span><span>And the system fell, without forgiveness.</span></p>
-  <audio controls preload="none" src="audio/calavera-04.mp3"></audio>
-  <p class="check"><span class="i18n" lang="es">rima</span><span class="i18n" lang="en">rhyme</span> 2-4 <b>✓</b> · 1-3 <b>✓</b> · <span class="i18n" lang="es">sílabas</span><span class="i18n" lang="en">syllables</span> 10-9-9-10</p>
-</article>
-<article>
-  <p class="kicker"><span class="i18n" lang="es">Según La Voz de Galicia</span><span class="i18n" lang="en">From La Voz de Galicia</span></p>
-  <p class="titular"><a href="https://news.google.com/rss/articles/CBMi6gFBVV95cUxQazg3cVl4UjFQTGhZdW1sbHZ1Mkl0ZGl4SFp3UDBKX3NMQzk1NjlZRGRzaVUwTEhyYmZhc0IyUGllR1p2VWdRQm9NNUR3LThkS0NqNmN1Qm5Rb2NuVFFyUEEzRDhUR0pobjFscW5Yc2l3NGVjazd4UmhNUWZHcld5WnNvZ3M5RjdSZ29XTHhTeUk2QVlOVUNQRHdXWnRPYU9IVWpIUTdrYmRCclJXVjRXVVo4TmdnNW1NZ1M5UVI3ZlppVVZoQjQzekNJUzl0MXlJUmZnR2kxZW5vaTVvelZqaTEydURyZkJwUGfSAYYCQVVfeXFMT3hUb1lvU19TQ3ZoOVk5Und2ZmlobEotTDdoTWZMeUMyU1l0eVB0ZURoaWJ1WFpiLWZyTklPU3U4a21XQ1FLS0t1a3dabzBhWm5qdXl3bEYwbUpESUlsUU0tMzhCWjBJZG5QbUpDWk5DTGhxNHZtNDBNN2l3VVhPeUFOcmFOT2dOWWZ2OVRMdDZ2MU40NmVOSzJYOGNlcXZQLXYzUzVBbUREcm9WSUJOeTJ2NGkwYkFVZ2NtSEdKWTFUZm5HaFhYVjBQMUJWQm1ubXpyRnI4anhWV2g3cVZCSlUxNHhqVzdwS0hkVlhkYmV4bGdfV0ZCeE9lWTVWVzNwUGt0RXJPZw?oc=5" rel="noopener"><span class="i18n" lang="es">La caída de las tecnológicas se acelera por las incertidumbres de su gasto en inteligencia artificial</span><span class="i18n" lang="en">Tech Stocks Fall Further Amid AI Spending Concerns</span></a></p>
-  <p class="versos" lang="es"><span>La nube, promesa audaz,</span><span>se hunde en un oscuro plan,</span><span>El dato, un valor fatal,</span><span>se esfuma, ¡qué desengaño, van!</span></p>
-  <p class="en" lang="en"><span>The cloud, a bold promise,</span><span>sinks into a dark scheme,</span><span>The data, a fatal value,</span><span>vanishes, what a disappointment, fleeting!</span></p>
-  <audio controls preload="none" src="audio/calavera-05.mp3"></audio>
-  <p class="check"><span class="i18n" lang="es">rima</span><span class="i18n" lang="en">rhyme</span> 2-4 <b>✓</b> · <span class="i18n" lang="es">sílabas</span><span class="i18n" lang="en">syllables</span> 8-8-8-10</p>
+  <p class="check"><span class="i18n" lang="es">rima</span><span class="i18n" lang="en">rhyme</span> 2-4 <b>✓</b> · <span class="i18n" lang="es">sílabas</span><span class="i18n" lang="en">syllables</span> 9-9-9-10</p>
 </article>
   </section>
   <section class="about">
     <h2><span class="i18n" lang="es">¿Qué es esto?</span><span class="i18n" lang="en">What is this?</span></h2>
-    <p><span class="i18n" lang="es">Una <em>calavera literaria</em> es un poema satírico que en México se escribe por el Día de Muertos, imaginando que la Muerte viene a llevarse a alguien. En el siglo XIX la prensa las usaba para burlarse de los poderosos; las calaveras de José Guadalupe Posada, la Catrina entre ellas, nacieron en esas páginas.</span><span class="i18n" lang="en">A <em>calavera literaria</em> is a short satirical poem Mexicans write for Día de los Muertos, imagining Death coming to take someone away. In the 19th century the press used them to mock the powerful; José Guadalupe Posada's skeletons, the Catrina among them, were born on those pages.</span></p>
+    <p><span class="i18n" lang="es">Una <em>calavera literaria</em> es un poema satírico que en México se escribe por el Día de Muertos, imaginando que la Muerte viene a llevarse a alguien. En el siglo XIX la prensa las usaba para burlarse de los poderosos; las calaveras de José Guadalupe Posada, la Catrina entre ellas, nacieron en esas páginas. Nuestro lema, <em>¡Gran Calavera Tecnológica!</em>, imita el pregón de sus cabeceras, como la <em>Gran Calavera Eléctrica</em> de Posada, de principios del siglo XX.</span><span class="i18n" lang="en">A <em>calavera literaria</em> is a short satirical poem Mexicans write for Día de los Muertos, imagining Death coming to take someone away. In the 19th century the press used them to mock the powerful; José Guadalupe Posada's skeletons, the Catrina among them, were born on those pages. Our motto, <em>¡Gran Calavera Tecnológica!</em>, borrows the shout of their headlines, like Posada's <em>Gran Calavera Eléctrica</em> from the early 1900s.</span></p>
     <p><span class="i18n" lang="es">Catrina News recupera esa tradición para la tecnología: lee los titulares del día, descarta los que hablan de personas concretas o de tragedias, y escribe una calavera para las empresas y productos de la noticia. <strong>Gemma 3</strong>, un modelo abierto, escribe los versos en un portátil con Ollama. Python puro comprueba cada rima y cada sílaba y le dice al modelo qué corregir. ElevenLabs le pone la voz a la Catrina.</span><span class="i18n" lang="en">Catrina News brings that back for tech: it reads today's headlines, skips anything about real people or tragedies, and writes a calavera for the companies and products in the news. <strong>Gemma 3</strong>, an open-weight model, writes the verses on a laptop through Ollama. Plain Python checks every rhyme and syllable count and tells the model exactly what to fix. ElevenLabs gives the Catrina her voice.</span></p>
     <p><span class="i18n" lang="es">La rima no sobrevive a la traducción: el español es el original, y el inglés de cada calavera es una traducción verso a verso para quien no lo habla.</span><span class="i18n" lang="en">Rhymes don't survive translation, so the Spanish is the original and the English below each calavera is a line-by-line gloss.</span></p>
   </section>
   <footer>
     <span class="i18n" lang="es">Escrita por <strong>gemma3:12b</strong>, un modelo abierto que corre en un portátil. Recitada por la Catrina con la voz de ElevenLabs. La rima y la métrica no las juzga el modelo: las comprueba el código, verso a verso.</span><span class="i18n" lang="en">Written by <strong>gemma3:12b</strong>, an open model running on a laptop. Read aloud by the Catrina, voiced with ElevenLabs. The model doesn't judge its own rhymes: code checks every line.</span>
+    <p class="creditos"><span class="i18n" lang="es">Hecho por <a href="https://github.com/finallyjay">finallyjay</a> para el Hacktoberfest 2026 · <a href="https://github.com/finallyjay/catrinanews">Código en GitHub</a> · Licencia MIT</span><span class="i18n" lang="en">Made by <a href="https://github.com/finallyjay">finallyjay</a> for Hacktoberfest 2026 · <a href="https://github.com/finallyjay/catrinanews">Source on GitHub</a> · MIT license</span></p>
   </footer>
 </main>
 <div class="catrina-flotante" aria-hidden="true"><svg class="skull" viewBox="0 0 120 130" aria-hidden="true">
@@ -244,6 +254,29 @@ footer strong { font-style:normal; }
         else playingAll = false;
       });
     });
+    var video = document.getElementById("catrina-video");
+    if (video) {
+      var syncTracks = function () {
+        var lang = document.documentElement.dataset.lang;
+        for (var i = 0; i < video.textTracks.length; i++) {
+          video.textTracks[i].mode = video.textTracks[i].language === lang ? "showing" : "disabled";
+        }
+      };
+      syncTracks();
+      var baseSetLang = window.setLang;
+      window.setLang = function (lang) { baseSetLang(lang); syncTracks(); };
+      video.addEventListener("play", function () {
+        playingAll = false;
+        audios.forEach(function (o) { o.pause(); });
+        syncTracks();
+      });
+      audios.forEach(function (a) { a.addEventListener("play", function () { video.pause(); }); });
+      window.conocerCatrina = function () {
+        video.scrollIntoView({ behavior: "smooth", block: "center" });
+        video.currentTime = 0;
+        video.play();
+      };
+    }
     window.escucharHoja = function () {
       playingAll = true;
       audios[0].currentTime = 0;

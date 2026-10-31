@@ -79,6 +79,18 @@ html[data-lang="en"] .en { font-size:.95rem; color:var(--ink); }
 .escuchar { margin-top:12px; font-family:"Rye", serif; font-size:1rem; background:var(--ink); color:var(--paper);
   border:none; padding:8px 18px; cursor:pointer; letter-spacing:.04em; }
 .escuchar:hover { background:var(--red); }
+.escuchar.secundario { background:none; color:var(--ink); border:2px solid var(--ink); }
+.escuchar.secundario:hover { background:var(--ink); color:var(--paper); }
+.presenta { display:flex; align-items:center; justify-content:center; gap:22px; margin:14px auto 6px; }
+.presenta .acciones { display:flex; flex-direction:column; gap:10px; align-items:stretch; }
+.presenta .acciones .escuchar { margin-top:0; }
+.intro { margin:0; width:220px; padding:5px; border:3px double var(--ink); background:#e9dcbd; }
+.intro video { display:block; width:100%; aspect-ratio:1; background:#1b1611; }
+.intro video::cue { font-family:Georgia, serif; font-size:.68rem; line-height:1.25; }
+@media (max-width:700px) {
+  .presenta { flex-direction:column; gap:12px; }
+  .intro { width:min(78vw, 300px); }
+}
 article { transition:background .4s; }
 article.activa { background:#f7efd9; box-shadow:inset 4px 0 0 var(--red); }
 .catrina-flotante { position:fixed; right:22px; bottom:22px; width:96px; padding:10px 10px 4px;
@@ -86,6 +98,10 @@ article.activa { background:#f7efd9; box-shadow:inset 4px 0 0 var(--red); }
   opacity:0; transform:translateY(20px); transition:opacity .3s, transform .3s; pointer-events:none; }
 .catrina-flotante .skull { width:100%; margin:0; }
 body.recitando .catrina-flotante { opacity:1; transform:none; }
+.creditos { font-style:normal; font-size:.78rem; letter-spacing:.06em; text-transform:uppercase; margin:12px 0 0;
+  padding-top:10px; border-top:1px solid var(--ink); }
+.creditos a { color:inherit; text-decoration:none; border-bottom:1px dotted var(--muted); }
+.creditos a:hover { color:var(--red); }
 footer { text-align:center; font-size:.85rem; padding-top:14px; font-style:italic; }
 footer strong { font-style:normal; }
 @media (max-width:700px) {
@@ -143,12 +159,16 @@ def articulo(c: dict) -> str:
 ABOUT_EN_1 = (
     "A <em>calavera literaria</em> is a short satirical poem Mexicans write for Día de los Muertos, "
     "imagining Death coming to take someone away. In the 19th century the press used them to mock "
-    "the powerful; José Guadalupe Posada's skeletons, the Catrina among them, were born on those pages."
+    "the powerful; José Guadalupe Posada's skeletons, the Catrina among them, were born on those pages. "
+    "Our motto, <em>¡Gran Calavera Tecnológica!</em>, borrows the shout of their headlines, like "
+    "Posada's <em>Gran Calavera Eléctrica</em> from the early 1900s."
 )
 ABOUT_ES_1 = (
     "Una <em>calavera literaria</em> es un poema satírico que en México se escribe por el Día de Muertos, "
     "imaginando que la Muerte viene a llevarse a alguien. En el siglo XIX la prensa las usaba para burlarse "
-    "de los poderosos; las calaveras de José Guadalupe Posada, la Catrina entre ellas, nacieron en esas páginas."
+    "de los poderosos; las calaveras de José Guadalupe Posada, la Catrina entre ellas, nacieron en esas páginas. "
+    "Nuestro lema, <em>¡Gran Calavera Tecnológica!</em>, imita el pregón de sus cabeceras, como la "
+    "<em>Gran Calavera Eléctrica</em> de Posada, de principios del siglo XX."
 )
 ABOUT_EN_2 = (
     "Catrina News brings that back for tech: it reads today's headlines, skips anything about real people "
@@ -177,6 +197,16 @@ ABOUT_ES_3 = (
 def render(data: dict) -> str:
     arts = "\n".join(articulo(c) for c in data["calaveras"] if c.get("versos"))
     voiced = any(c.get("audio") for c in data["calaveras"])
+    # The ElevenLabs avatar of La Catrina introducing the project (click to play, never autoplay).
+    intro = os.path.exists(os.path.join("site", "media", "catrina-intro.mp4"))
+    intro_html = (
+        '<figure class="intro"><video id="catrina-video" controls preload="none" playsinline '
+        'poster="media/catrina-intro.jpg" src="media/catrina-intro.mp4">'
+        '<track kind="subtitles" srclang="en" label="English" src="media/catrina-intro.en.vtt">'
+        '<track kind="subtitles" srclang="es" label="Español" src="media/catrina-intro.es.vtt">'
+        "</video></figure>"
+        if intro else ""
+    )
     return f"""<!doctype html>
 <html lang="en" data-lang="en">
 <head>
@@ -186,6 +216,9 @@ def render(data: dict) -> str:
 <meta name="description" content="Calaveras literarias de las noticias tecnológicas del día, escritas por un modelo abierto en local y recitadas por la Catrina.">
 <meta property="og:title" content="Catrina News · {fecha_larga(data["fecha"])}">
 <meta property="og:description" content="Today's tech news as Día de los Muertos calaveras: written by a local open model, rhyme checked in code, read aloud by the Catrina.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta property="og:image" content="https://catrinanews.tech/media/og.png">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Rye&display=swap" rel="stylesheet">
 <style>{CSS}</style>
@@ -218,7 +251,13 @@ def render(data: dict) -> str:
     {CALAVERA_SVG}
     <h1>Catrina <em>News</em></h1>
     <p class="lema">¡Gran Calavera Tecnológica!</p>
-    {f'<button type="button" class="escuchar" onclick="escucharHoja()">▶ {t("Escuchar la hoja", "Listen to the broadside")}</button>' if voiced else ''}
+    <div class="presenta">
+      {intro_html}
+      <div class="acciones">
+        {f'<button type="button" class="escuchar secundario" onclick="conocerCatrina()">▶ {t("Conoce a La Catrina", "Meet La Catrina")} · 22 s</button>' if intro else ''}
+        {f'<button type="button" class="escuchar" onclick="escucharHoja()">▶ {t("Escuchar la hoja", "Listen to the broadside")}</button>' if voiced else ''}
+      </div>
+    </div>
     <p class="sub">{t(
         "Donde la Flaca visita a las empresas que salieron hoy en las noticias, "
         "como hacía la prensa satírica del siglo XIX con los poderosos.",
@@ -244,6 +283,12 @@ def render(data: dict) -> str:
         + ("Read aloud by the Catrina, voiced with ElevenLabs. " if voiced else "")
         + "The model doesn't judge its own rhymes: code checks every line.",
     )}
+    <p class="creditos">{t(
+        'Hecho por <a href="https://github.com/finallyjay">finallyjay</a> para el Hacktoberfest 2026 · '
+        '<a href="https://github.com/finallyjay/catrinanews">Código en GitHub</a> · Licencia MIT',
+        'Made by <a href="https://github.com/finallyjay">finallyjay</a> for Hacktoberfest 2026 · '
+        '<a href="https://github.com/finallyjay/catrinanews">Source on GitHub</a> · MIT license',
+    )}</p>
   </footer>
 </main>
 <div class="catrina-flotante" aria-hidden="true">{CALAVERA_SVG}</div>
@@ -304,6 +349,29 @@ def render(data: dict) -> str:
         else playingAll = false;
       }});
     }});
+    var video = document.getElementById("catrina-video");
+    if (video) {{
+      var syncTracks = function () {{
+        var lang = document.documentElement.dataset.lang;
+        for (var i = 0; i < video.textTracks.length; i++) {{
+          video.textTracks[i].mode = video.textTracks[i].language === lang ? "showing" : "disabled";
+        }}
+      }};
+      syncTracks();
+      var baseSetLang = window.setLang;
+      window.setLang = function (lang) {{ baseSetLang(lang); syncTracks(); }};
+      video.addEventListener("play", function () {{
+        playingAll = false;
+        audios.forEach(function (o) {{ o.pause(); }});
+        syncTracks();
+      }});
+      audios.forEach(function (a) {{ a.addEventListener("play", function () {{ video.pause(); }}); }});
+      window.conocerCatrina = function () {{
+        video.scrollIntoView({{ behavior: "smooth", block: "center" }});
+        video.currentTime = 0;
+        video.play();
+      }};
+    }}
     window.escucharHoja = function () {{
       playingAll = true;
       audios[0].currentTime = 0;

@@ -17,14 +17,14 @@ Most tools treat calaveras as sweet poems for loved ones. Catrina News goes back
 ## How it works
 
 ```
-RSS headlines ──► editor (Gemma) ──► poet (Gemma) ──► rima.py checks ──► gloss (Gemma) ──► ElevenLabs ──► static site
+SerpApi + RSS ──► editor (Gemma) ──► poet (Gemma) ──► rima.py checks ──► gloss (Gemma) ──► ElevenLabs ──► static site
                   picks satirizable    writes the       rhyme + meter,     line-by-line      the Catrina      HTML + MP3
                   headlines, one per   calavera         sends precise      English           reads it         on catrinanews.tech
                   category; code                         feedback, retries
                   drops tragedies
 ```
 
-1. **Headlines** come from free RSS feeds (El País Tecnología, Google News).
+1. **Headlines** come from [SerpApi](https://serpapi.com)'s Google News engine (Spain, last 24 hours, with the outlet name and the article's real URL), mixed with El País Tecnología's RSS. Free RSS feeds work too, with no key.
 2. **The editor.** Gemma picks the headlines with satirical potential and labels each with a category from a fixed list. Code then keeps one per category, and a regex drops anything about violence, deaths or abuse, even if the model picked it (it once did).
 3. **The poet.** Gemma writes a four-line calavera. **Plain Python ([`rima.py`](rima.py)) checks the Spanish rhyme and counts metric syllables** (stress, diphthongs, synalepha), then tells the model exactly what failed: *"line 2 ends in 'director' (sounds '-or'), line 4 in 'mansión' ('-on'); they must rhyme."* Three candidates per headline; code picks the best.
 4. **The gloss.** Rhymes don't survive translation, so the Spanish is the original and the English is a line-by-line gloss.
@@ -45,6 +45,7 @@ Everything the reader sees is static: the AI runs once, on a laptop, like a prin
 
 - **Feedback works; planning doesn't.** Telling the model *which* sounds failed took the 4B from 4/10 to 9/10 rhymes. Asking it to pick its rhyming pair first made it worse: **2/10**, and it invented words (*"sopio"*, *"lumpo"*) to make them fit.
 - **Every rule I added, the model found the loophole.** *Panteón* (graveyard) closed a line in 4 of its first 10 calaveras. Ban it: it switched to *millón*. Ban words used elsewhere in the sheet: it kept the same sound with new words (*razón, decepción, perfección, lección*). The fix was banning rhyme *sounds*, which only code can hear.
+- **Guardrails belong in code too.** Given an espionage headline the prompt should have excluded, the model wrote a line mocking "the Chinese man". It never went online; code now drops spy, crime and person-centred headlines, and rejects any stanza that names a nationality or ethnicity.
 - **Form is code's job; sense is the model's.** Code can guarantee rhyme and meter. Whether the joke lands depends on model size: the 12B writes *"te vende aire, ¡qué cruel plan!"* where the 4B wrote *"lo envió al millón, ¡qué arroz!"*.
 - **The translation exposes nonsense.** *"Lo llevó al reino del brazo"* reads fine in Spanish; in English it's *"took him to the realm of the arm"*.
 
@@ -54,11 +55,12 @@ The satire is written entirely on my laptop by an open-weight model: no API bill
 
 ## Run it
 
-Requirements: Python 3.10+ (standard library only), [Ollama](https://ollama.com), and optionally an [ElevenLabs](https://elevenlabs.io) API key and `ffmpeg`.
+Requirements: Python 3.10+ (standard library only), [Ollama](https://ollama.com), and optionally [SerpApi](https://serpapi.com) and [ElevenLabs](https://elevenlabs.io) API keys and `ffmpeg`. Keys go in the environment or a `.env` file (`SERPAPI_API_KEY`, `ELEVENLABS_API_KEY`).
 
 ```shell
 ollama pull gemma3:12b          # ~8 GB; gemma3:4b works too, faster and rougher
-python3 hoja.py                 # today's headlines → calaveras → hoja_YYYY-MM-DD.json (~10 min on an M1)
+python3 hoja.py --fuente serpapi,elpais   # today's headlines → calaveras → hoja_YYYY-MM-DD.json (~10 min on an M1)
+python3 hoja.py                 # same, with free RSS only (El País + Google News), no key needed
 ELEVENLABS_API_KEY=... python3 voz.py   # optional: the Catrina's voice → site/audio/
 python3 render.py               # → site/index.html
 python3 -m unittest test_rima   # rhyme and meter checker tests
@@ -71,7 +73,7 @@ Options: `python3 hoja.py --n 5 --k 3 --fuente ambas`, `HOJA_MODEL=gemma3:4b`, `
 | [`rima.py`](rima.py) | Spanish rhyme (consonant and assonant) and metric syllable counting |
 | [`hoja.py`](hoja.py) | The daily pipeline: headlines → editor → calaveras → gloss |
 | [`mejorada.py`](mejorada.py) | Generation with feedback, banned rhyme sounds and best-of-k |
-| [`fuentes.py`](fuentes.py) | RSS headline sources |
+| [`fuentes.py`](fuentes.py) | Headline sources: SerpApi Google News and RSS |
 | [`traduccion.py`](traduccion.py) | Line-by-line English gloss and headline translation |
 | [`voz.py`](voz.py) | ElevenLabs voice over plain REST |
 | [`render.py`](render.py) | The bilingual Posada-style broadside |

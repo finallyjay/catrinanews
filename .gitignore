@@ -3,3 +3,10 @@ hoja_*.json
 __pycache__/
 .env
 demo/
+archivo/
+docs/avatar/avatar-images/
+docs/avatar/posada/
+docs/avatar/*.jpg
+docs/avatar/*.mp3
+docs/avatar/catrina-habla.html
+docs/post-draft.md

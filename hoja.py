@@ -89,9 +89,21 @@ SCHEMA_SELECCION = {
 # despite the prompt. These are never material for a joke, whatever the model says.
 SENSIBLES = re.compile(
     r"violen|víctima|muert|muri|asesin|suicid|abuso|acoso|porno|sexual|guerra|terroris|"
-    r"cáncer|enferm|hospital|niñ|menor|secuestr|tirote|atentad",
+    r"cáncer|enferm|hospital|niñ|menor|secuestr|tirote|atentad|"
+    # It also picked espionage and a hacking group; crime and spies are off the table.
+    r"espion|espía|agente|hacker|estafa|fraude|policía|detenid|"
+    # A sheet once offered a documentary on a real abuse case and spyware against journalists.
+    r"spyware|malware|infectad|\bcaso\b|juicio|tribunal|demanda|víctima|"
+    # Headlines about a person (their name next to a title) rather than a company.
+    r"\bjefe de|\bCEO\b|consejero delegado|fundador|presidente|ministr|\bPapa\b|\(\d+ años\)",
     re.IGNORECASE,
 )
+
+
+def nombres_propios(titular: str) -> set[str]:
+    """Capitalised words after the first one: 'iPhone', 'Duo', 'Tesla', 'Netflix'."""
+    palabras = re.findall(r"[\wÁÉÍÓÚÑáéíóúñ]+", titular)[1:]
+    return {w.lower() for w in palabras if len(w) >= 3 and (w[0].isupper() or w[:1] == "i" and w[1:2].isupper())}
 
 
 def elegir(items: list[dict], n: int) -> list[dict]:
@@ -105,8 +117,9 @@ def elegir(items: list[dict], n: int) -> list[dict]:
             SCHEMA_SELECCION,
             max_tokens=1600,  # a list with reasons doesn't fit in the 300 used for a stanza
             temperature=0.2,  # an editor's pick, not a creative one
+            timeout=600,  # ~45 headlines with category notes take minutes on a laptop
         )
-    except (json.JSONDecodeError, KeyError, urllib.error.URLError):
+    except (json.JSONDecodeError, KeyError, urllib.error.URLError, TimeoutError):
         return []
     picks = out.get("elegidos", [])
     # If every pick got the same category, the classification is noise (it happened):
@@ -121,6 +134,10 @@ def elegir(items: list[dict], n: int) -> list[dict]:
         # "foldable phones" are the same story; code enforces that it isn't repeated.
         if SENSIBLES.search(items[i]["titular"]):
             continue
+        # The iPhone Duo came twice under two categories; a shared proper noun means the same story.
+        propios = nombres_propios(items[i]["titular"])
+        if any(propios & e2["propios"] for e2 in elegidos):
+            continue
         categoria = e.get("categoria", "otros")
         if usar_categoria and categoria != "otros" and categoria in categorias:
             continue
@@ -131,7 +148,8 @@ def elegir(items: list[dict], n: int) -> list[dict]:
         vistos.add(i)
         categorias.add(categoria)
         temas.append(palabras)
-        elegidos.append({**items[i], "tema": e.get("tema", ""), "categoria": categoria, "motivo": e.get("motivo", "")})
+        elegidos.append({**items[i], "tema": e.get("tema", ""), "categoria": categoria,
+                         "motivo": e.get("motivo", ""), "propios": propios})
         if len(elegidos) == n:
             break
     return elegidos
@@ -162,6 +180,7 @@ def main() -> None:
         versos = r["best"]["versos"]
         usadas.update(rhyme_sounds(versos, r["best"]["res"]))  # each calavera must find fresh rhyme sounds
         english = traducir(versos) if r["best"]["res"].get("ok") else []
+        e = {k: v for k, v in e.items() if k != "propios"}
         hoja.append({**e, "titular_en": traducir_titular(e["titular"]), "versos": versos, "english": english, "check": r["best"]["res"], "segundos": r["seconds"]})
         mark = "✅" if r["best"]["res"].get("ok") else "❌"
         print(f"\n{mark} {e['titular']}  [{e['fuente']}]")

@@ -17,6 +17,12 @@ import xml.etree.ElementTree as ET
 UA = {"User-Agent": "Mozilla/5.0 (catrinanews; +https://catrinanews.tech)"}
 
 CONSULTA = "tecnológica OR startup OR app OR inteligencia artificial"
+# For SerpApi, ask for the companies themselves: satire needs a company or product to aim at,
+# and a generic "inteligencia artificial" query returned op-eds and celebrities.
+CONSULTA_EMPRESAS = (
+    "Apple OR Google OR Meta OR Amazon OR Microsoft OR Tesla OR OpenAI OR Samsung "
+    "OR TikTok OR Netflix OR Nvidia"
+)
 
 FEEDS = {
     "elpais": "https://feeds.elpais.com/mrss-s/pages/ep/site/elpais.com/section/tecnologia/portada",
@@ -57,7 +63,7 @@ def rss(nombre: str, limite: int = 30) -> list[dict]:
     return out
 
 
-def serpapi(limite: int = 30, consulta: str = CONSULTA) -> list[dict]:
+def serpapi(limite: int = 30, consulta: str = CONSULTA_EMPRESAS) -> list[dict]:
     """Today's headlines from SerpApi's Google News engine (Spain, Spanish, last day)."""
     key = _env_key("SERPAPI_API_KEY")
     if not key:
