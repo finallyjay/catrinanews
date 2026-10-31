@@ -39,7 +39,7 @@ The result is printed as a Posada-style *hoja volante* (broadside), in English o
 
 🌐 **[catrinanews.tech](https://catrinanews.tech)**: press **Meet La Catrina** to hear her introduce herself, or **Listen to the broadside** and she'll read every calavera.
 
-{% youtube VIDEO_ID %}
+{% youtube 0WV_of3JDlw %}
 
 The video opens with La Catrina herself introducing the project (an ElevenLabs avatar with the same voice that reads the calaveras), then the broadside reads itself: press "Listen to the broadside" and she recites every calavera while her skull's jaw follows her voice.
 
