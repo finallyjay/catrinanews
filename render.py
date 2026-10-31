@@ -57,6 +57,7 @@ article:last-child:nth-child(odd) { grid-column:1 / -1; border-right:none; text-
 .versos span:nth-child(even) { padding-left:1.4em; }
 .en { font-size:.86rem; font-style:italic; color:var(--muted); margin:0 0 10px; line-height:1.4; }
 .en span { display:block; }
+audio { width:100%; height:32px; margin:0 0 8px; filter:sepia(.6); }
 .check { font-family:ui-monospace, Menlo, monospace; font-size:.7rem; color:var(--muted); }
 .check b { color:var(--red); font-weight:600; }
 footer { text-align:center; font-size:.85rem; padding-top:14px; font-style:italic; }
@@ -92,6 +93,7 @@ def articulo(c: dict) -> str:
   <p class="titular">{titular}</p>
   <p class="versos" lang="es">{versos}</p>
   {f'<p class="en" lang="en">{en}</p>' if en else ''}
+  {f'<audio controls preload="none" src="{e(c["audio"])}"></audio>' if c.get("audio") else ''}
   <p class="check">{rima} · sílabas {e(meter)}</p>
 </article>"""
 
@@ -122,6 +124,7 @@ def render(data: dict) -> str:
   </section>
   <footer>
     Escrita por <strong>{html.escape(data["modelo"])}</strong>, un modelo abierto que corre en un portátil.
+    {"Recitada por la Catrina con la voz de ElevenLabs." if any(c.get("audio") for c in data["calaveras"]) else ""}
     La rima y la métrica no las juzga el modelo: las comprueba el código, verso a verso.
   </footer>
 </main>
