@@ -9,7 +9,7 @@ import urllib.parse
 import urllib.request
 import xml.etree.ElementTree as ET
 
-UA = {"User-Agent": "Mozilla/5.0 (hoja-volante; +https://github.com/finallyjay)"}
+UA = {"User-Agent": "Mozilla/5.0 (catrinanews; +https://catrinanews.tech)"}
 
 FEEDS = {
     "elpais": "https://feeds.elpais.com/mrss-s/pages/ep/site/elpais.com/section/tecnologia/portada",

@@ -44,6 +44,7 @@ header { text-align:center; padding:18px 0 10px; border-bottom:4px double var(--
 h1 { font-family:"Rye", "IM Fell English", serif; font-weight:400; font-size:clamp(2rem, 6vw, 3.4rem);
   line-height:1.05; margin:0; letter-spacing:.02em; }
 h1 em { color:var(--red); font-style:normal; }
+.lema { font-family:"Rye", "IM Fell English", serif; font-size:1.3rem; margin:6px 0 0; letter-spacing:.04em; }
 .sub { font-style:italic; margin:8px auto 0; max-width:36em; }
 .grid { display:grid; grid-template-columns:1fr 1fr; gap:0; }
 article { padding:22px 20px 18px; border-bottom:1px solid var(--ink); }
@@ -105,7 +106,10 @@ def render(data: dict) -> str:
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Gran Calavera Tecnológica · {fecha_larga(data["fecha"])}</title>
+<title>Catrina News · {fecha_larga(data["fecha"])}</title>
+<meta name="description" content="Calaveras literarias de las noticias tecnológicas del día, escritas por un modelo abierto en local y recitadas por la Catrina.">
+<meta property="og:title" content="Catrina News · {fecha_larga(data["fecha"])}">
+<meta property="og:description" content="Today's tech news as Day of the Dead calaveras: written by a local open model, rhyme checked in code, read aloud by the Catrina.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Rye&display=swap" rel="stylesheet">
 <style>{CSS}</style>
@@ -115,7 +119,8 @@ def render(data: dict) -> str:
   <div class="top"><span>Hoja volante</span><span>{fecha_larga(data["fecha"])}</span><span>Día de Muertos</span></div>
   <header>
     {CALAVERA_SVG}
-    <h1>¡Gran Calavera <em>Tecnológica</em>!</h1>
+    <h1>Catrina <em>News</em></h1>
+    <p class="lema">¡Gran Calavera Tecnológica!</p>
     <p class="sub">Donde la Flaca visita a las empresas que salieron hoy en las noticias,
     como hacía la prensa satírica del siglo XIX con los poderosos.</p>
   </header>
