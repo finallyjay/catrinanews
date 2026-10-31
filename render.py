@@ -124,7 +124,7 @@ def articulo(c: dict) -> str:
 
 
 ABOUT_EN_1 = (
-    "A <em>calavera literaria</em> is a short satirical poem Mexicans write for the Day of the Dead, "
+    "A <em>calavera literaria</em> is a short satirical poem Mexicans write for Día de los Muertos, "
     "imagining Death coming to take someone away. In the 19th century the press used them to mock "
     "the powerful; José Guadalupe Posada's skeletons, the Catrina among them, were born on those pages."
 )
@@ -168,7 +168,7 @@ def render(data: dict) -> str:
 <title>Catrina News · {fecha_larga(data["fecha"])}</title>
 <meta name="description" content="Calaveras literarias de las noticias tecnológicas del día, escritas por un modelo abierto en local y recitadas por la Catrina.">
 <meta property="og:title" content="Catrina News · {fecha_larga(data["fecha"])}">
-<meta property="og:description" content="Today's tech news as Day of the Dead calaveras: written by a local open model, rhyme checked in code, read aloud by the Catrina.">
+<meta property="og:description" content="Today's tech news as Día de los Muertos calaveras: written by a local open model, rhyme checked in code, read aloud by the Catrina.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Rye&display=swap" rel="stylesheet">
 <style>{CSS}</style>

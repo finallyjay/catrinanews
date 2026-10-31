@@ -1,6 +1,6 @@
 # Catrina News 💀🌼
 
-**Today's tech news, as Day of the Dead calaveras.** A local open-weight model writes satirical verses about the companies in today's headlines, plain Python checks every rhyme, and the Catrina reads them aloud.
+**Today's tech news, as Día de los Muertos calaveras.** A local open-weight model writes satirical verses about the companies in today's headlines, plain Python checks every rhyme, and the Catrina reads them aloud.
 
 👉 **[catrinanews.tech](https://catrinanews.tech)** · [Leer en español](README.es.md)
 
@@ -10,7 +10,7 @@ Built for the [Hacktoberfest Open-Source AI Challenge, Week 4: Ghost in the Mach
 
 ## What's a calavera?
 
-A *calavera literaria* is a short, satirical poem Mexicans write for the Day of the Dead, imagining Death (*la Flaca*, *la Catrina*) coming to take someone away. They began as jokes at the expense of the powerful in 19th-century newspapers, where José Guadalupe Posada's skeletons, the Catrina among them, were born.
+A *calavera literaria* is a short, satirical poem Mexicans write for Día de los Muertos, imagining Death (*la Flaca*, *la Catrina*) coming to take someone away. They began as jokes at the expense of the powerful in 19th-century newspapers, where José Guadalupe Posada's skeletons, the Catrina among them, were born.
 
 Most tools treat calaveras as sweet poems for loved ones. Catrina News goes back to the origin: the satire of the powerful. Today, that's tech companies.
 

@@ -20,10 +20,10 @@ SCHEMA = {
     "required": ["lines"],
 }
 
-SYSTEM = """You translate Mexican calaveras literarias (satirical Day of the Dead verses) into English.
+SYSTEM = """You translate Mexican calaveras literarias (satirical verses for Día de los Muertos) into English.
 Translate line by line: exactly one English line per Spanish line, same order.
 Keep the meaning and the joke; do not try to rhyme. Keep names of Death as they are
-(la Flaca, la Catrina, la Huesuda)."""
+(la Flaca, la Catrina, la Huesuda), and never translate "Día de los Muertos" or "Día de Muertos"."""
 
 
 def traducir(versos: list[str]) -> list[str]:
