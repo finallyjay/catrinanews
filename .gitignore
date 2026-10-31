@@ -2,3 +2,4 @@ resultados*.json
 hoja_*.json
 __pycache__/
 .env
+demo/
