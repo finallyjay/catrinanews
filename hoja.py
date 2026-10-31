@@ -3,6 +3,7 @@
 Usage:
   python3 hoja.py                    # El País tech + Google News, 5 calaveras, gemma3:12b
   python3 hoja.py --fuente elpais --n 3 --k 2
+  python3 hoja.py --fuente serpapi,elpais        # SerpApi Google News + El País
   HOJA_MODEL=gemma3:4b python3 hoja.py
 """
 
@@ -138,11 +139,14 @@ def elegir(items: list[dict], n: int) -> list[dict]:
 
 def main() -> None:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--fuente", choices=["elpais", "google", "ambas"], default="ambas")
+    ap.add_argument(
+        "--fuente", default="elpais,google",
+        help="comma-separated: elpais, google, serpapi (needs SERPAPI_API_KEY)",
+    )
     ap.add_argument("--n", type=int, default=5, help="calaveras in the sheet")
     ap.add_argument("--k", type=int, default=3, help="candidates per calavera")
     args = ap.parse_args()
-    fuentes = ["elpais", "google"] if args.fuente == "ambas" else [args.fuente]
+    fuentes = ["elpais", "google"] if args.fuente == "ambas" else args.fuente.split(",")
 
     t0 = time.time()
     items = titulares(fuentes, limite=25)

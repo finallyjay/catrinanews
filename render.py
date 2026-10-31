@@ -17,13 +17,20 @@ MESES = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio",
 FUENTES = {"elpais": "El País"}
 
 CALAVERA_SVG = """<svg class="skull" viewBox="0 0 120 130" aria-hidden="true">
-  <path d="M60 6C30 6 10 28 10 56c0 16 7 28 18 35v14c0 5 4 9 9 9h46c5 0 9-4 9-9V91c11-7 18-19 18-35C110 28 90 6 60 6z" fill="#1b1611"/>
+  <path d="M60 6C30 6 10 28 10 56c0 16 7 28 18 35v6h64v-6c11-7 18-19 18-35C110 28 90 6 60 6z" fill="#1b1611"/>
   <ellipse cx="40" cy="58" rx="13" ry="15" fill="#efe6cf"/>
   <ellipse cx="80" cy="58" rx="13" ry="15" fill="#efe6cf"/>
   <path d="M60 72l-8 14h16z" fill="#efe6cf"/>
   <g stroke="#efe6cf" stroke-width="3">
-    <line x1="44" y1="100" x2="44" y2="114"/><line x1="54" y1="100" x2="54" y2="114"/>
-    <line x1="66" y1="100" x2="66" y2="114"/><line x1="76" y1="100" x2="76" y2="114"/>
+    <line x1="44" y1="89" x2="44" y2="97"/><line x1="54" y1="89" x2="54" y2="97"/>
+    <line x1="66" y1="89" x2="66" y2="97"/><line x1="76" y1="89" x2="76" y2="97"/>
+  </g>
+  <g class="mandibula">
+    <path d="M30 99h60v10c0 5-4 9-9 9H39c-5 0-9-4-9-9z" fill="#1b1611"/>
+    <g stroke="#efe6cf" stroke-width="3">
+      <line x1="44" y1="99" x2="44" y2="107"/><line x1="54" y1="99" x2="54" y2="107"/>
+      <line x1="66" y1="99" x2="66" y2="107"/><line x1="76" y1="99" x2="76" y2="107"/>
+    </g>
   </g>
   <g fill="#c8102e"><circle cx="40" cy="30" r="5"/><circle cx="60" cy="24" r="6"/><circle cx="80" cy="30" r="5"/></g>
 </svg>"""
@@ -69,6 +76,16 @@ html[data-lang="en"] .en { font-size:.95rem; color:var(--ink); }
 .about { padding:18px 6px 4px; border-bottom:4px double var(--ink); }
 .about h2 { font-family:"Rye", serif; font-weight:400; font-size:1.4rem; margin:0 0 8px; text-align:center; }
 .about p { margin:0 0 10px; line-height:1.5; }
+.escuchar { margin-top:12px; font-family:"Rye", serif; font-size:1rem; background:var(--ink); color:var(--paper);
+  border:none; padding:8px 18px; cursor:pointer; letter-spacing:.04em; }
+.escuchar:hover { background:var(--red); }
+article { transition:background .4s; }
+article.activa { background:#f7efd9; box-shadow:inset 4px 0 0 var(--red); }
+.catrina-flotante { position:fixed; right:22px; bottom:22px; width:96px; padding:10px 10px 4px;
+  background:var(--paper); border:3px double var(--ink); border-radius:50%; box-shadow:0 8px 30px #0007;
+  opacity:0; transform:translateY(20px); transition:opacity .3s, transform .3s; pointer-events:none; }
+.catrina-flotante .skull { width:100%; margin:0; }
+body.recitando .catrina-flotante { opacity:1; transform:none; }
 footer { text-align:center; font-size:.85rem; padding-top:14px; font-style:italic; }
 footer strong { font-style:normal; }
 @media (max-width:700px) {
@@ -201,6 +218,7 @@ def render(data: dict) -> str:
     {CALAVERA_SVG}
     <h1>Catrina <em>News</em></h1>
     <p class="lema">¡Gran Calavera Tecnológica!</p>
+    {f'<button type="button" class="escuchar" onclick="escucharHoja()">▶ {t("Escuchar la hoja", "Listen to the broadside")}</button>' if voiced else ''}
     <p class="sub">{t(
         "Donde la Flaca visita a las empresas que salieron hoy en las noticias, "
         "como hacía la prensa satírica del siglo XIX con los poderosos.",
@@ -228,6 +246,71 @@ def render(data: dict) -> str:
     )}
   </footer>
 </main>
+<div class="catrina-flotante" aria-hidden="true">{CALAVERA_SVG}</div>
+<script>
+  // The Catrina's jaw follows the loudness of her voice (Web Audio API, no services).
+  (function () {{
+    var audios = Array.prototype.slice.call(document.querySelectorAll("audio"));
+    var jaws = document.querySelectorAll(".mandibula");
+    var ctx, analyser, data, raf, level = 0, playingAll = false;
+
+    function hook(a) {{
+      if (a._hooked) return;
+      ctx = ctx || new (window.AudioContext || window.webkitAudioContext)();
+      if (!analyser) {{
+        analyser = ctx.createAnalyser();
+        analyser.fftSize = 512;
+        analyser.connect(ctx.destination);
+        data = new Uint8Array(analyser.fftSize);
+      }}
+      ctx.createMediaElementSource(a).connect(analyser);
+      a._hooked = true;
+    }}
+    function setJaw(px) {{
+      for (var i = 0; i < jaws.length; i++) jaws[i].setAttribute("transform", "translate(0 " + px.toFixed(1) + ")");
+    }}
+    function tick() {{
+      analyser.getByteTimeDomainData(data);
+      var sum = 0;
+      for (var i = 0; i < data.length; i++) {{ var v = (data[i] - 128) / 128; sum += v * v; }}
+      var rms = Math.sqrt(sum / data.length);
+      level = level * 0.55 + Math.min(1, rms * 5) * 0.45;  // smooth, so it talks instead of twitching
+      setJaw(level * 11);
+      raf = requestAnimationFrame(tick);
+    }}
+    function stop() {{
+      cancelAnimationFrame(raf);
+      level = 0;
+      setJaw(0);
+      document.body.classList.remove("recitando");
+    }}
+    audios.forEach(function (a, i) {{
+      a.addEventListener("play", function () {{
+        hook(a);
+        ctx.resume();
+        audios.forEach(function (o) {{ if (o !== a) o.pause(); }});
+        document.querySelectorAll("article.activa").forEach(function (el) {{ el.classList.remove("activa"); }});
+        var art = a.closest("article");
+        art.classList.add("activa");
+        if (playingAll) art.scrollIntoView({{ behavior: "smooth", block: "center" }});
+        document.body.classList.add("recitando");
+        cancelAnimationFrame(raf);
+        tick();
+      }});
+      a.addEventListener("pause", stop);
+      a.addEventListener("ended", function () {{
+        stop();
+        if (playingAll && audios[i + 1]) audios[i + 1].play();
+        else playingAll = false;
+      }});
+    }});
+    window.escucharHoja = function () {{
+      playingAll = true;
+      audios[0].currentTime = 0;
+      audios[0].play();
+    }};
+  }})();
+</script>
 </body>
 </html>
 """
