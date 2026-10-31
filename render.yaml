@@ -1,0 +1,15 @@
+# Render Blueprint: a static site. The calaveras are generated locally (Gemma on a
+# laptop) and committed to site/; Render only serves the files.
+services:
+  - type: web
+    name: catrinanews
+    runtime: static
+    buildCommand: echo "Static site, generated locally with hoja.py, voz.py and render.py"
+    staticPublishPath: ./site
+    domains:
+      - catrinanews.tech
+      - www.catrinanews.tech
+    headers:
+      - path: /audio/*
+        name: Cache-Control
+        value: public, max-age=86400
