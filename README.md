@@ -55,7 +55,7 @@ The satire is written entirely on my laptop by an open-weight model: no API bill
 
 ## Run it
 
-Requirements: Python 3.10+ (standard library only), [Ollama](https://ollama.com), and optionally [SerpApi](https://serpapi.com) and [ElevenLabs](https://elevenlabs.io) API keys and `ffmpeg`. Keys go in the environment or a `.env` file (`SERPAPI_API_KEY`, `ELEVENLABS_API_KEY`).
+Requirements: Python 3.15+ (standard library only), [Ollama](https://ollama.com), and optionally [SerpApi](https://serpapi.com) and [ElevenLabs](https://elevenlabs.io) API keys and `ffmpeg`. Keys go in the environment or a `.env` file (`SERPAPI_API_KEY`, `ELEVENLABS_API_KEY`).
 
 ```shell
 ollama pull gemma3:12b          # ~8 GB; gemma3:4b works too, faster and rougher
